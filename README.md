@@ -8,6 +8,9 @@ Introduction to Julia course at Imperial College
 * **Part 3:** Benchmarking Julia, Linear Algebra, AutoDifferentiation
 
 ## Tutors : 
+* Jay DesLauriers
+
+### Past Tutors and Content Creators :
 * Yiannis Simillides
 * Evripides Georgiades
 
@@ -16,10 +19,10 @@ Introduction to Julia course at Imperial College
 * **Apply** fundamental components of the Julia language including variables, loops, conditionals and functions. 
 * **Create** programs designed to solve simple problems.
 * **Interpret** common errors and use these to help debug a program.
-* as well as advanced concepts, such as Multiple Dispatch and custom data types.
+* **Understand** advanced concepts, such as Multiple Dispatch and custom data types.
 
 ## Prerequisites
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ysimillides/Introduction-to-Julia/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/Introduction-to-Julia/HEAD)
 * No programming experience is required
 * Binder runtime will be provided
 * Feel free to install https://julialang.org/downloads/ 
@@ -30,4 +33,4 @@ Introduction to Julia course at Imperial College
 * https://discourse.julialang.org/c/usage/first-steps/8
 
 ## Feedback
-This is the second time this course is running, so please feel free to let me know if anything needs changing / any feedback/ difficulties or anything you particularly enjoyed!
+This is the third time this course is running, so please feel free to let us know if anything needs changing / any feedback/ difficulties or if there is anything that you particularly enjoyed!
