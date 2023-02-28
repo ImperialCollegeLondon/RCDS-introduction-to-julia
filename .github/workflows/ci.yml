@@ -15,6 +15,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: rm *.toml .gitignore .github
       - run: cp ${{ matrix.day }}/* .
       - run: rm -rf day*
       - uses: stefanzweifel/git-auto-commit-action@v4
