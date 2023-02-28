@@ -23,7 +23,7 @@ Introduction to Julia course at Imperial College
 * **Understand** advanced concepts, such as Multiple Dispatch and custom data types.
 
 ## Prerequisites
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/Introduction-to-Julia/HEAD)
+
 * No programming experience is required
 * Binder runtime will be provided
 * Feel free to install Julia using the instructions below
@@ -58,7 +58,7 @@ solution for quickly getting started with Julia! Simply click the icon below dep
 
 *Be aware that load times may vary and timeout. Please try again in case of failure*
 
-[**binder with all days (slow)**](https://mybinder.org/static/logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head)
+[binder with all days (slow)](https://mybinder.org/static/logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head)
 
 
 ## Julia Elsewhere
