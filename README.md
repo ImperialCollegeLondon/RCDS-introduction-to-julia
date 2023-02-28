@@ -58,8 +58,7 @@ solution for quickly getting started with Julia! Simply click the icon below dep
 
 *Be aware that load times may vary and timeout. Please try again in case of failure*
 
-[binder with all days (slow)](https://mybinder.org/static/logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head)
-
+[All days in one binder](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head) (may be very slow)
 
 ## Julia Elsewhere
 
@@ -125,3 +124,14 @@ Once installed and running, you can open a new Jupyter Notebook backed by Julia 
 
 *Note with the Software Hub Anaconda on the Training Room computers, after*
 *ignore the application that starts, and instead search and run **Jupyter Notebook (Anaconda 3)***
+
+
+## Notebook Downloads
+
+If you are working locally, download the notebooks used each day below!
+
+**Day 1:** [![Zip](https://img.shields.io/badge/zip-download-brightgreen)](https://github.com/ImperialCollegeLondon/RCDS-introduction-to-julia/zipball/day1)
+
+**Day 2:** [![Zip](https://img.shields.io/badge/zip-download-brightgreen)](https://github.com/ImperialCollegeLondon/RCDS-introduction-to-julia/zipball/day2)
+
+**Day 3:** [![Zip](https://img.shields.io/badge/zip-download-brightgreen)](https://github.com/ImperialCollegeLondon/RCDS-introduction-to-julia/zipball/day3)
