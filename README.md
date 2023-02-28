@@ -58,7 +58,7 @@ solution for quickly getting started with Julia! Simply click the icon below dep
 
 *Be aware that load times may vary and timeout. Please try again in case of failure*
 
-**All days (slow):** [![Binder](https://mybinder.org/static/logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head)
+[**binder with all days (slow)**](https://mybinder.org/static/logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head)
 
 
 ## Julia Elsewhere
