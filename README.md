@@ -1,8 +1,5 @@
 # Introduction to Julia
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/Introduction-to-Julia/HEAD)
-
-
 Introduction to Julia course at Imperial College
 
 3 × 2 hour classes
@@ -51,11 +48,18 @@ The fastest way to get started with the course material is with [Binder](https:/
 
 Binder is a cloud based platform for reproducible programming environments. It is a free service,
 so don't expect the same performance as RCS, or even your local device. However, it is a great
-solution for quickly getting started with Julia! Simply click the icon below.
+solution for quickly getting started with Julia! Simply click the icon below depending on the day of the course.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/Introduction-to-Julia/HEAD)
+**Day 1:** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/day1)
+
+**Day 2:** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/day2)
+
+**Day 3:** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/day3)
 
 *Be aware that load times may vary and timeout. Please try again in case of failure*
+
+**All days (slow):** [![Binder](https://mybinder.org/static/logo.svg)](https://mybinder.org/v2/gh/ImperialCollegeLondon/RCDS-introduction-to-julia.git/head)
+
 
 ## Julia Elsewhere
 
