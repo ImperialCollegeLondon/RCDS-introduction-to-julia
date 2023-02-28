@@ -12,6 +12,7 @@ jobs:
     strategy:    
       matrix:
         day: [day1, day2, day3]
+
     steps:
       - uses: actions/checkout@v3
       - run: rm -r *.toml .gitignore .github
@@ -22,7 +23,6 @@ jobs:
           commit_message: auto-create ${{ matrix.day }} for binder
           branch: ${{ matrix.day }}
           commit_options: '--no-verify --signoff'
-          file_pattern: '*.ipynb *.toml'
           repository: .
           commit_user_name: rcds-julia[bot]
           push_options: '--force'
