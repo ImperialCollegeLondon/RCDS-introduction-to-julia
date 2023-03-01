@@ -92,7 +92,13 @@ Pkg.add("IJulia")
 
 ```
 
-Next time you create a new Notebook, you should now see **Julia 1.8.5** as an available Kernel! 
+Download the course materials
+
+```bash
+curl -L https://github.com/imperialcollegelondon/rcds-introduction-to-julia/tarball/main | tar xz
+```
+
+Next time you create a new Notebook, you should see **Julia 1.8.5** as an available Kernel. 
 
 
 ## Julia Locally
