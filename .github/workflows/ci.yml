@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:    
       matrix:
-        day: [day2, day3]
+        day: [day3]
 
     steps:
       - uses: actions/checkout@v3
