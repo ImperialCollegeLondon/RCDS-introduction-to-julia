@@ -15,6 +15,11 @@ Introduction to Julia course at Imperial College
 * Yiannis Simillides
 * Evripides Georgiades
 
+## Acknowledgements :
+
+The course materials come from [Julia Academy](https://juliaacademy.com/) lessons,
+and are being adapted for teaching at the Graduate School.
+
 ## On completion of this workshop you will be able to:
 * **Use** Jupyter Notebooks to execute Julia scripts and install packages.
 * **Apply** fundamental components of the Julia language including variables, loops, conditionals and functions. 
