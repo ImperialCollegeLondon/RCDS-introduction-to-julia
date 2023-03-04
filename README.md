@@ -11,7 +11,7 @@ Introduction to Julia course at Imperial College
 ## Tutors : 
 * Jay DesLauriers
 
-### Past Tutors and Content Creators :
+### Past Tutors :
 * Yiannis Simillides
 * Evripides Georgiades
 
@@ -21,6 +21,12 @@ Introduction to Julia course at Imperial College
 * **Create** programs designed to solve simple problems.
 * **Interpret** common errors and use these to help debug a program.
 * **Understand** advanced concepts, such as Multiple Dispatch and custom data types.
+
+## There will also be an opportunity to explore domain specific packages used for:
+* Data Frames
+* Basic Linear Algebra
+* Factorisations and SVD
+* Ordinary differential equations
 
 ## Prerequisites
 
