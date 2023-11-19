@@ -9,7 +9,7 @@
 	// "forwardPorts": [],
 
 	// Configure tool-specific properties.
-	// "customizations": {
+	"customizations": {
 
 				// Configure properties specific to VS Code.
 		"vscode": {			
