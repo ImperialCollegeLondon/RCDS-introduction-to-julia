@@ -3,7 +3,7 @@
 {
 	"name": "Julia",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "jaydes/devcontainers-julia:latest"
+	"image": "julia:1-bookworm"
 
     
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
