@@ -8,9 +8,7 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		// A Feature to install Julia via juliaup. More info: https://github.com/JuliaLang/devcontainer-features/tree/main/src/julia.
-		"ghcr.io/julialang/devcontainer-features/julia:1": {
-			"channel": "${templateOption:channel}"
-		}
+		"ghcr.io/julialang/devcontainer-features/julia:1": {}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
