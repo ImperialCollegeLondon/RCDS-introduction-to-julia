@@ -370,14 +370,14 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╔═╡ 4cd71906-1c8c-4ae1-ae18-e18fdaa1f5ab
 ## YOUR CODE GOES HERE
 
+# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
+my_pi = "3.14"
+
 # ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
 # ╠═╡ disabled = true
 #=╠═╡
 my_pi = 3.14159
   ╠═╡ =#
-
-# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-my_pi = "3.14"
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
