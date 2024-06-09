@@ -10,13 +10,26 @@
 		// A Feature to install Julia via juliaup. More info: https://github.com/JuliaLang/devcontainer-features/tree/main/src/julia.
 		"ghcr.io/julialang/devcontainer-features/julia:1": {
 			"channel": "1.10"
-		}
+		},
+        "./pluto-feature": {
+        }
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [1234],
-	"postCreateCommand": "julia -e 'import Pkg; Pkg.add(\"Pluto\");'",
-	"postStartCommand": "julia -e 'import Pluto; Pluto.run()'"
+	"customizations": {
+		"vscode": {
+		  "settings": {
+			"julia.executablePath": "/home/vscode/.juliaup/bin/julia",
+			"julia.environmentPath": "/workspaces/RCDS-introduction-to-julia",
+			"julia.format.enable": false,
+			"julia.lint.run": true,
+			"julia.lint.call": false,
+			"julia.symbolCacheDownload": false,
+			"julia.usePlotPane": false
+		  }
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
