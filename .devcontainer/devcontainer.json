@@ -15,7 +15,8 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [1234],
-    "postStartCommand": "julia -e 'import Pluto; Pluto.run()'"
+	"postCreateCommand": "julia -e 'import Pkg; Pkg.add(\"Pluto\");'",
+	"postStartCommand": "julia -e 'import Pluto; Pluto.run()'"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
