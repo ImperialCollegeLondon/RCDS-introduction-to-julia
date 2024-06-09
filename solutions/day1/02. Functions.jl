@@ -13,8 +13,6 @@ Functions are a nice follow-on from compound expressions and `let` blocks, which
 Topics:
 1. How to declare a function
 2. Duck-typing in Julia
-3. Mutating vs. non-mutating functions
-4. Some higher order functions
 
 ## How to declare a function
 
@@ -216,36 +214,8 @@ round("DesLauriers")
 
 # ╔═╡ 15a20987-d560-429f-bc79-d67c70207382
 md"""
-We'll explore more of this when we look at multiple dispatch tomorrow.
+We'll explore more of this when we look at multiple dispatch tomorrow, and we'll come back to functions once we start learning about data structures!
 """
-
-# ╔═╡ f75c7c4d-2441-40a8-b906-54b7375c70f5
-md"""
-# Mutating v Non-mutating
-
-By convention, functions that end in a `!` will alter, or **mutate** their inputs. Functions not ending in `!` will not mutate their inputs.
-
-Let's see how this works in practice with `sort`.
-"""
-
-# ╔═╡ cd4c9856-b585-44d7-8763-5bfb6e43e038
-my_first_array = [10, 7, 2, 5, 1]
-
-# ╔═╡ 576eadb2-4dd2-4875-bc86-182768305222
-sort(my_first_array)
-
-# ╔═╡ c95b34ab-99be-47ea-8330-6483619fd09a
-my_first_array
-
-# ╔═╡ 95bf93f3-d853-45b6-b752-bba23b9f53e5
-md"""
-The `sort()` function hasn't modified our input - it is still unsorted.
-
-Change the function call above to use `sort!()` instead. Re-run the cells and notice the difference!
-"""
-
-# ╔═╡ 88663c2e-b5c6-4940-bca0-906ff13620f1
-
 
 # ╔═╡ Cell order:
 # ╟─b9584f90-d0de-11ee-0cd7-81185dad6eca
@@ -285,9 +255,3 @@ Change the function call above to use `sort!()` instead. Re-run the cells and no
 # ╟─01123b4b-2112-4034-990d-d255f8a88176
 # ╠═d91d4423-b334-4a6d-a8df-82806d1a30a2
 # ╟─15a20987-d560-429f-bc79-d67c70207382
-# ╟─f75c7c4d-2441-40a8-b906-54b7375c70f5
-# ╠═cd4c9856-b585-44d7-8763-5bfb6e43e038
-# ╠═576eadb2-4dd2-4875-bc86-182768305222
-# ╠═c95b34ab-99be-47ea-8330-6483619fd09a
-# ╟─95bf93f3-d853-45b6-b752-bba23b9f53e5
-# ╠═88663c2e-b5c6-4940-bca0-906ff13620f1

@@ -13,8 +13,6 @@ Functions are a nice follow-on from compound expressions and `let` blocks, which
 Topics:
 1. How to declare a function
 2. Duck-typing in Julia
-3. Mutating vs. non-mutating functions
-4. Some higher order functions
 
 ## How to declare a function
 
