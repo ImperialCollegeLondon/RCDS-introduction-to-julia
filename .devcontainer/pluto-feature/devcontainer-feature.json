@@ -3,6 +3,5 @@
     "version": "0.0.1",
     "name": "Pluto Setup Feature",
     "description": "Installs Pluto and runs it in the container",
-    "installsAfter": ["ghcr.io/julialang/devcontainer-features/julia"],
-    "postCreateCommand": "nohup julia -e 'import Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' > ~/pluto.log 2>&1 &"
+    "installsAfter": ["ghcr.io/julialang/devcontainer-features/julia"]
 }

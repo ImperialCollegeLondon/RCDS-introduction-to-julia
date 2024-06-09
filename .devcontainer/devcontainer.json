@@ -14,7 +14,7 @@
         "./pluto-feature": {
         }
 	},
-
+	"postAttachCommand": "nohup julia -e 'import Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' > ~/pluto.log 2>&1 &",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [1234],
 	"customizations": {
