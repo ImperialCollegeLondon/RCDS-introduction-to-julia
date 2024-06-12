@@ -157,7 +157,7 @@ function draw_oval(x, y, width, height, rotation=0.0; color=:blue, alpha=0.5)
     x_oval = x .+ x_rot
     y_oval = y .+ y_rot
     
-    return plot!(x_oval, y_oval, legend=false, seriestype=:shape, lw=0, c=color, alpha=alpha)
+    return plot!(x_oval, y_oval, legend=false, xticks=false, yticks=false, grid=false, seriestype=:shape, lw=0, c=color, alpha=alpha)
 end
 
 # ╔═╡ 190ab0db-ac8b-4ddd-ace3-90e07c2cffaa
@@ -165,14 +165,16 @@ begin
 	scatter()
 	
 	draw_oval(1, 1, sepal_width_slider, sepal_length_slider, 1 * π / 8; color=:yellow, alpha=0.5)  
-	draw_oval(2, 2, petal_width_slider, petal_length_slider, 2 * π / 8; color=:green, alpha=0.5)
+	draw_oval(3, 2, petal_width_slider, petal_length_slider, 1 * π / 8; color=:green, alpha=0.5)
 	
-	title!("Visualising petal and sepal length")
+	title!("Visualising petal and sepal")
 	xlabel!("Width")
 	ylabel!("Length")
+	ylims!(-7,9)
+	xlims!(-5,9)
 	
-    annotate!(1, 1, text("Sepal", :black, 12, :center))
-    annotate!(2, 2, text("Petal", :black, 12, :center))
+    annotate!(1, 1, text("Sepal", :black, 10, :right))
+    annotate!(3, 2, text("Petal", :black, 10, :center))
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
