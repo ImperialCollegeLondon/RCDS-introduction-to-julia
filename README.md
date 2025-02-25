@@ -1,6 +1,6 @@
 # Introduction to Julia
 
-Introduction to Julia course at Imperial College
+Introduction to Julia course at Imperial College Early Career Researcher Institute (ECRI)
 
 3 × 2 hour classes
 
@@ -18,7 +18,7 @@ Introduction to Julia course at Imperial College
 ## Acknowledgements :
 
 The course materials come from [Julia Academy](https://juliaacademy.com/) lessons,
-and are being adapted for teaching at the Graduate School.
+and are being adapted for teaching in ECRI.
 
 ## On completion of this workshop you will be able to:
 * **Use** notebooks to execute Julia scripts and install packages.
@@ -44,12 +44,12 @@ and are being adapted for teaching at the Graduate School.
 * https://discourse.julialang.org/c/usage/first-steps/8
 
 ## Feedback
-This is the fourth time this course is running, this time with a slightly new format, so please feel free to let us know if anything
+This is the fifth time this course is running, with a slightly new format, so please feel free to let us know if anything
 needs changing / any feedback / difficulties or if there is anything that you particularly enjoyed!
 
 # Preparing Your Environment
 
-In this course we'll be using the latest and greatest Julia v1.x via a Jupyter Notebook.
+In this course we'll be using the latest and greatest Julia v1.x via a Pluto Notebook.
 This section will help you get set up with Julia.
 
 ## Codespaces
