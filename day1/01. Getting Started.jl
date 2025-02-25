@@ -8,7 +8,7 @@ using InteractiveUtils
 md"""
 # Hello!
 
-And welcome to Introduction to Julia at the Graduate School. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
+And welcome to Introduction to Julia. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
 
 Pluto is a Notebook format. It is similar to Jupyter, but there are a few key differences:
 * Pluto is just for Julia
