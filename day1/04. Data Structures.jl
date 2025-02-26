@@ -1,8 +1,23 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.4
 
 using Markdown
 using InteractiveUtils
+
+# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
+macro bind(def, element)
+    #! format: off
+    quote
+        local iv = try Base.loaded_modules[Base.PkgId(Base.UUID("6e696c72-6542-2067-7265-42206c756150"), "AbstractPlutoDingetjes")].Bonds.initial_value catch; b -> missing; end
+        local el = $(esc(element))
+        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : iv(el)
+        el
+    end
+    #! format: on
+end
+
+# ╔═╡ 9ea71f1c-9ce3-41a8-ad3d-35b57a800438
+using PlutoUI
 
 # ╔═╡ 02950a3c-bc01-49f5-86f3-873a024e00d9
 md"""
@@ -315,11 +330,17 @@ ones(2, 4, 3)
 md"""
 #### Quick Quiz
 
-Can you find the function to **sort** the random vector below?
+Can you find the function to **sort** the vector in `random` below? Enter some code in the empty cell, *run it* and then click `Generate random vector` to see if it worked!
 """
 
+# ╔═╡ 1c09ee99-1062-4128-b76d-7cebfe57df4c
+@bind go Button("Generate random vector")
+
 # ╔═╡ e7ccec39-2a0e-4264-9764-bf368dc9e97c
-random = rand(1:100, 10)
+random = begin
+    go      
+    rand(1:100, 10)
+end
 
 # ╔═╡ a03727d1-c807-4af5-bead-21d4b51ec62f
 
@@ -615,6 +636,7 @@ if A2 == [12 15 18; 21 24 27; 30 33 36]
 	$(Markdown.MD(Markdown.Admonition("correct", "Well done!!", [])))"""
 end
 
+
 # ╔═╡ Cell order:
 # ╟─02950a3c-bc01-49f5-86f3-873a024e00d9
 # ╟─1b124ebf-29da-432e-a023-b8194097cb95
@@ -676,7 +698,8 @@ end
 # ╠═d9d47e30-3af7-4efb-ba76-e1d99ae4fe0e
 # ╠═46689800-66f8-44d7-a934-9f4055efabad
 # ╟─4aa6ea48-d002-46ce-9955-79cb33f0f536
-# ╠═e7ccec39-2a0e-4264-9764-bf368dc9e97c
+# ╟─1c09ee99-1062-4128-b76d-7cebfe57df4c
+# ╟─e7ccec39-2a0e-4264-9764-bf368dc9e97c
 # ╠═a03727d1-c807-4af5-bead-21d4b51ec62f
 # ╟─606af175-6429-4d1f-88fe-e7419eea430e
 # ╟─c83fdf90-98ef-4a46-b534-a7078f1c3e58
@@ -736,3 +759,6 @@ end
 # ╟─d12a4878-879a-446f-ac1c-21881ccb41ab
 # ╠═0396b6a4-5eb6-4720-98a6-3fad66f64bad
 # ╟─2f6d22e7-ec13-4062-8c65-ba42655df4ae
+# ╟─9ea71f1c-9ce3-41a8-ad3d-35b57a800438
+# ╟─00000000-0000-0000-0000-000000000001
+# ╟─00000000-0000-0000-0000-000000000002
