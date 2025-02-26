@@ -28,10 +28,7 @@
         "./pluto-feature": {
         }
 	},
-	"extensions": [
-	  "julialang.language-julia"
-	],
-	"postAttachCommand": "setsid julia -e 'import Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' &",
+	"postAttachCommand": "setsid julia -e 'using Logging; global_logger(ConsoleLogger(stdout, Logging.Debug)); import Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' 2>/dev/null",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [1234],
 	"customizations": {
