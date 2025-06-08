@@ -18,7 +18,9 @@
         // A Feature to install Julia via juliaup. More info: https://github.com/JuliaLang/devcontainer-features/tree/main/src/julia.
         "ghcr.io/julialang/devcontainer-features/julia:1": {
             "channel": "release"
-        }
+        },
+        "ghcr.io/devcontainers/features/git-lfs:1": {}
+
     },
     "postAttachCommand": "setsid julia --sysimage intro_r_sysimage.so -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true sleep(900); @info \"keepalive\" end; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' 2>/dev/null",
     "postCreateCommand": "/home/vscode/.juliaup/bin/julia -e 'using Pkg; Pkg.add.(%[Plots Pluto PlutoUI RDatasets Statistics])'",
