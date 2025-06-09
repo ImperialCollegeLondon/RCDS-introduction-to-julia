@@ -17,7 +17,7 @@
     "features": {
         "ghcr.io/devcontainers/features/git-lfs:1": {}
     },
-    "postAttachCommand": "setsid /home/vscode/.juliaup/bin/julia --sysimage=intro_r_sysimage.so --project=. -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true; sleep(900); @info \"keepalive\"; end; Pluto.run(sysimage=\"intro_r_sysimage.so\", require_secret_for_open_links=false, require_secret_for_access=false)' 2>/dev/null",
+    "postAttachCommand": "setsid /home/vscode/.juliaup/bin/julia --sysimage=intro_r_sysimage.so --project=. -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true; sleep(300); @info \"keepalive\"; end; Pluto.run(sysimage=\"intro_r_sysimage.so\", require_secret_for_open_links=false, require_secret_for_access=false)' 2>/dev/null",
     "postCreateCommand": "curl -fsSL https://install.julialang.org | sh -s -- -y && /home/vscode/.juliaup/bin/julia --project=. -e 'using Pkg; Pkg.instantiate(allow_autoprecomp=false)'",
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [1234],
