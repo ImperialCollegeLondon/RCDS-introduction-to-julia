@@ -1,7 +1,0 @@
-{
-    "id": "pluto-feature",
-    "version": "0.0.1",
-    "name": "Pluto Setup Feature",
-    "description": "Installs Pluto and runs it in the container",
-    "installsAfter": ["ghcr.io/julialang/devcontainer-features/julia"]
-}
