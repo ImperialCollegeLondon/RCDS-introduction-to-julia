@@ -1,12 +1,20 @@
 # Introduction to Julia
 
-Introduction to Julia course at Imperial College Early Career Researcher Institute (ECRI)
+Introduction to Julia course at the Imperial College Early Career Researcher Institute (ECRI).
+In this course we'll be using the latest and greatest Julia v1.x via a Pluto Notebook.
 
-3 × 2 hour classes
+## Quickstart
 
-* **Part 1:** Getting started, Functions, Conditionals
-* **Part 2:** Data Structures, Packages, Plotting
-* **Part 3:** Types, Multiple Dispatch, Error handling
+> There is a more detailed **Preparing your environment** section further below.
+
+We recommend engaging with the material via a Codespace, accessed by this link:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ImperialCollegeLondon/rcds-introduction-to-julia?quickstart=1)
+
+Alternatively, if you run [Julia locally](#julia-elsewhere), all of the material in this workshop can be downloaded as a ZIP:
+
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/ImperialCollegeLondon/rcds-introduction-to-julia/archive/refs/heads/main.zip)
+
 
 ## Tutors : 
 * Jay DesLauriers
@@ -44,15 +52,15 @@ and are being adapted for teaching in ECRI.
 * https://discourse.julialang.org/c/usage/first-steps/8
 
 ## Feedback
-This is the fifth time this course is running, with a slightly new format, so please feel free to let us know if anything
+As with every ECRI course, we welcome feedback. Please feel free to let us know if anything
 needs changing / any feedback / difficulties or if there is anything that you particularly enjoyed!
 
 # Preparing Your Environment
 
-In this course we'll be using the latest and greatest Julia v1.x via a Pluto Notebook.
-This section will help you get set up with Julia.
 
 ## Codespaces
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ImperialCollegeLondon/rcds-introduction-to-julia?quickstart=1)
 
 The fastest way to get started with the course material is with a GitHub Codespace. You will need to login with a GitHub account to do so. We recommend signing up for [GitHub Student Benefits](https://education.github.com/discount_requests/application), if you have not already.
 
@@ -63,8 +71,9 @@ The Codespace takes about 5 minutes to fully start. When ready, it will inform y
 
 ## Julia Elsewhere
 
-If you are keen on using Julia more regularly, we have outlined various options below.
+If you are keen on using Julia more regularly, we have outlined various options below. You can download the course materials as a ZIP below.
 
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue.svg)](https://github.com/ImperialCollegeLondon/rcds-introduction-to-julia/archive/refs/heads/main.zip)
 
 ### Julia Locally
 
