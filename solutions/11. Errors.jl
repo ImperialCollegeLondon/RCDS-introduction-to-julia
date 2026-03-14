@@ -158,22 +158,6 @@ md"""
 That's the basics of error handling in Julia: catching errors, throwing your own, using custom types, and quick checks with `@assert`.
 """
 
-# ╔═╡ 00000000-0000-0000-0000-000000000001
-PLUTO_PROJECT_TOML_CONTENTS = """
-[deps]
-"""
-
-# ╔═╡ 00000000-0000-0000-0000-000000000002
-PLUTO_MANIFEST_TOML_CONTENTS = """
-# This file is machine-generated - editing it directly is not advised
-
-julia_version = "1.11.5"
-manifest_format = "2.0"
-project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-
-[deps]
-"""
-
 # ╔═╡ Cell order:
 # ╟─955c8ad4-4527-11f0-0b88-a7550f6c7b1a
 # ╟─130aa0d1-978f-4434-b16c-35f09b16bee1
@@ -198,5 +182,3 @@ project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 # ╠═efbbd0c5-4f3c-4a21-86cb-179da9bb9473
 # ╠═4ac8dc23-dde1-43ec-a17b-51179b36161b
 # ╟─e0eb96a9-9682-4db7-8c8d-c18d31502066
-# ╟─00000000-0000-0000-0000-000000000001
-# ╟─00000000-0000-0000-0000-000000000002
