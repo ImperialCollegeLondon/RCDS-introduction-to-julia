@@ -5,7 +5,7 @@ using Markdown
 using InteractiveUtils
 
 # ╔═╡ 7a251168-b76b-4d9a-8b34-be1e3d1c5a71
-using Plots
+using CairoMakie
 
 # ╔═╡ 9fbb35b2-27e2-11ef-093b-0bfff810e23f
 md"""
@@ -14,7 +14,7 @@ md"""
 ## Basics
 There are a few different ways to plot in Julia.
 
-Here we'll show you how to use `Plots.jl` or the `Plots` package. One of the advantages to `Plots.jl` is that it allows you to seamlessly change the way your plots are drawn. Let's bring it into our notebook with `using`.
+Here we'll show you how to use `CairoMakie.jl`, the modern Julia plotting library. CairoMakie produces high-quality static plots and is part of the Makie ecosystem. Let's bring it into our notebook with `using`.
 """
 
 # ╔═╡ d2e05a2d-8514-445e-8d19-d7cf4993f4cf
@@ -31,7 +31,7 @@ num_pirates = [45000, 20000, 15000, 5000, 400, 17]
 
 # ╔═╡ e286b95f-e414-4b4f-989d-c9235eb12a7b
 md"""
-Plots supports multiple backends — that is, libraries that actually do the drawing — all with the same API. To start out, let's try the GR backend.  You choose it with a call to `gr()`:
+CairoMakie produces static plots directly — no backend selection is needed. It renders using Cairo, which gives you publication-quality output out of the box.
 """
 
 # ╔═╡ cc9f2dc1-3d92-4697-8723-5544febbcd6a
@@ -39,7 +39,7 @@ Plots supports multiple backends — that is, libraries that actually do the dra
 
 # ╔═╡ 18a6cf61-8df1-44c2-a05b-a044e8b183a5
 md"""
-and now we can use commands like `plot` and `scatter` to generate plots.
+and now we can use commands like `lines` and `scatter` to generate plots. In Makie, `lines` is used for line plots (instead of `plot`).
 """
 
 # ╔═╡ 546c1f6f-b95c-4b6c-b18f-9e043fb0b7b8
@@ -47,11 +47,20 @@ and now we can use commands like `plot` and `scatter` to generate plots.
 
 # ╔═╡ 9a0ba5d9-2d79-47c1-80c4-a7aab24795a8
 md"""
-The `!` at the end of the `scatter!` function name makes `scatter!` a mutating function, indicating that the scattered points will be added onto the pre-existing plot.
+In Makie, the `!` at the end of a function name (like `scatter!`) means it adds to an existing axis rather than creating a new figure. The pattern is to create a `Figure` and an `Axis`, then use `lines!` and `scatter!` to add plot elements to that axis:
 
-In contrast, see what happens when you replace `scatter!` in the above with the non-mutating function `scatter`.
+```julia
+begin
+    fig = Figure()
+    ax = Axis(fig[1,1])
+    lines!(ax, num_pirates, global_temp, label="line")
+    scatter!(ax, num_pirates, global_temp, label="points")
+    axislegend(ax)
+    fig
+end
+```
 
-Next, let's update this plot with the `xlabel!`, `ylabel!`, and `title!` commands to add more information to our plot.
+Try it yourself in the cell below!
 """
 
 # ╔═╡ e7c452d8-6169-403e-bf7a-1a5ef880f932
@@ -70,12 +79,16 @@ This still doesn't look quite right. The number of pirates has decreased since 1
 
 # ╔═╡ c245eab8-feb9-41b7-857d-3d3d14abe991
 begin
-	plot(num_pirates, global_temp, label="line")  
-	scatter!(num_pirates, global_temp, label="points") 
-	xlabel!("Number of Pirates [Approximate]")
-	ylabel!("Global Temperature (C)")
-	title!("Influence of pirate population on global warming")
+	fig = Figure()
+	ax = Axis(fig[1,1],
+		xlabel="Number of Pirates [Approximate]",
+		ylabel="Global Temperature (C)",
+		title="Influence of pirate population on global warming")
+	lines!(ax, num_pirates, global_temp, label="line")
+	scatter!(ax, num_pirates, global_temp, label="points")
+	axislegend(ax)
 	# TODO: flip this plot
+	fig
 end
 
 # ╔═╡ 298da6be-db34-4517-86f1-694970074a5b
@@ -84,7 +97,7 @@ And there we have it!
 
 This is a joke about how people often conflate correlation and causation.
 
-**Without changing syntax, we can create this plot with the plotly backend.** Just call it in the cell below and re-run the cells with plotting above.
+CairoMakie produces publication-quality static plots. If you need interactive or GPU-accelerated plots, the Makie ecosystem also offers `WGLMakie` (for web) and `GLMakie` (for desktop), but we won't need those here.
 """
 
 # ╔═╡ 2edd3cfc-9013-4b19-83f2-9b98cbacedcb
@@ -92,11 +105,10 @@ This is a joke about how people often conflate correlation and causation.
 
 # ╔═╡ 627c8d9e-0f07-4c9a-b2bd-5e14426b3fba
 md"""
-Plotly has its benefits, but `gr()` can also do some special things! Let's switch the backend again.
+Now let's explore another fun thing we can do with CairoMakie — animations!
 """
 
 # ╔═╡ cc767273-86c3-4ecb-b267-4b92168d7b33
-gr()
 
 # ╔═╡ 030d8ce3-82ba-4367-aac8-55b4454eafa6
 md"""
@@ -117,7 +129,7 @@ md"""
 ```julia
 x = -10:10
 ```
-plot y vs. x for $y = x^2$.  If you run into an issue, look at the hint below.
+use `lines` to plot y vs. x for $y = x^2$.  If you run into an issue, look at the hint below.
 """
 
 # ╔═╡ a7364ac8-20d5-4ace-8b50-8e4c0881ce2a
@@ -137,18 +149,19 @@ md"""
 # ╔═╡ 90f6b5ed-bff9-4e5b-a433-ce06666effd6
 begin
 	z = -10:10
-	p1 = plot(z, z)
-	p2 = plot(z, z.^2)
-	p3 = plot(z, z.^3)
-	p4 = plot(z, z.^4)
-	plot(p1, p2, p3, p4, legend = false)
+	fig = Figure()
+	ax1 = Axis(fig[1,1]); lines!(ax1, z, z)
+	ax2 = Axis(fig[1,2]); lines!(ax2, z, z.^2)
+	ax3 = Axis(fig[2,1]); lines!(ax3, z, z.^3)
+	ax4 = Axis(fig[2,2]); lines!(ax4, z, z.^4)
+	fig
 end
 
 # ╔═╡ f93ee3be-57f3-4d66-9974-1e857e847989
 md"""
-and then create a $4x1$ plot that uses `p1`, `p2`, `p3`, and `p4` as subplots.
+and then create a $4x1$ plot using Makie's grid layout (i.e., place four axes in a single column).
 
-A whole host of Julia plotting ecosystem (full of backends, layouts and more) exists [here](https://docs.juliaplots.org/latest/layouts/#Simple-Layouts).
+Learn more about Makie layouts [here](https://docs.makie.org/stable/tutorials/layout-tutorial).
 """
 
 # ╔═╡ bc776cd3-a9af-423f-8c21-7e1fc1e9a8cd

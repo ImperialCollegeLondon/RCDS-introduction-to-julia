@@ -15,10 +15,9 @@ macro bind(def, element)
 end
 
 # ╔═╡ 327ac340-2893-11ef-3d4d-fd50d66d28e9
-using RDatasets, Plots, PlutoUI, Statistics
+using RDatasets, CairoMakie, PlutoUI, Statistics
 
 # ╔═╡ 09a9fdbe-9af3-4a48-9df4-a6f5976dde79
-plotly()
 
 # ╔═╡ 14925c90-3b62-45a5-8a7e-dfb78c1ee558
 iris = dataset("datasets", "iris")
@@ -39,16 +38,23 @@ species = ["setosa", "versicolor", "virginica"]
 
 # ╔═╡ b0728c0f-a570-4d52-92c5-cd41f391f9f6
 begin
-	filtered_data = filter(row -> row.Species in species, iris)
-	
-	if !isempty(filtered_data)
-		scatter(filtered_data.SepalLength, filtered_data.SepalWidth, group=filtered_data.Species, markersize=5, legend=:topleft)
-		xlims!(4, 8)
-		ylims!(1.9, 4.5)	
-		xlabel!("Sepal Length (cm)")
-		ylabel!("Sepal Width (cm)")
-		title!("Sepal Length vs Sepal Width")
-	end
+    filtered_data = filter(row -> row.Species in species, iris)
+
+    if !isempty(filtered_data)
+        fig = Figure()
+        ax = Axis(fig[1,1],
+            xlabel="Sepal Length (cm)",
+            ylabel="Sepal Width (cm)",
+            title="Sepal Length vs Sepal Width")
+        for sp in unique(filtered_data.Species)
+            subset = filter(row -> row.Species == sp, filtered_data)
+            scatter!(ax, subset.SepalLength, subset.SepalWidth, label=sp, markersize=10)
+        end
+        axislegend(ax, position=:lt)
+        xlims!(ax, 4, 8)
+        ylims!(ax, 1.9, 4.5)
+        fig
+    end
 end
 
 # ╔═╡ dc820f20-db90-4ae9-94e9-c4067deb45da
@@ -74,19 +80,22 @@ end
 
 # ╔═╡ 8cba5133-5885-43d3-984d-8722d23ee91d
 begin
-	
-		filtered_petal_data = filter(row -> row.PetalLength >= min_length && row.PetalLength <= max_length, iris)
-		if !isempty(filtered_petal_data)
-		    histogram(filtered_petal_data.PetalLength, bins=15, 
-		              group=filtered_petal_data.Species,
-		              legend=:topright)
-			xlims!(0.5, 7.5)
-			ylims!(0, 13)
-		    xlabel!("Petal Length (cm)")
-		    ylabel!("Frequency")
-		    title!("Histogram of Petal Length for Selected Range")
-		end
-	
+    filtered_petal_data = filter(row -> row.PetalLength >= min_length && row.PetalLength <= max_length, iris)
+    if !isempty(filtered_petal_data)
+        fig = Figure()
+        ax = Axis(fig[1,1],
+            xlabel="Petal Length (cm)",
+            ylabel="Frequency",
+            title="Histogram of Petal Length for Selected Range")
+        for sp in unique(filtered_petal_data.Species)
+            subset = filter(row -> row.Species == sp, filtered_petal_data)
+            hist!(ax, subset.PetalLength, bins=15, label=sp)
+        end
+        axislegend(ax, position=:rt)
+        xlims!(ax, 0.5, 7.5)
+        ylims!(ax, 0, 13)
+        fig
+    end
 end
 
 # ╔═╡ e621a4ae-ea6e-4d08-a357-09b9d35718f1
@@ -141,37 +150,37 @@ md"Sepal Width $(@bind sepal_width_slider Slider(sepal_width_min:0.1:sepal_width
 md"Sepal Length $(@bind sepal_length_slider Slider(sepal_length_min:0.1:sepal_length_max, default=(sepal_length_min + sepal_length_max) / 2, show_value=true))"
 
 # ╔═╡ f143ef8b-c466-42c3-907e-fce1ba32fa1a
-function draw_oval(x, y, width, height, rotation=0.0; color=:blue, alpha=0.5)
-    t = range(0, stop=2π, length=100)  # Parameter for the ellipse
+function draw_oval(ax, x, y, width, height, rotation=0.0; color=:blue, alpha=0.5)
+    t = range(0, stop=2π, length=100)
     x_oval = width * cos.(t)
     y_oval = height * sin.(t)
-    
-    # Rotate the ellipse by the specified angle
+
     x_rot = x_oval * cos(rotation) - y_oval * sin(rotation)
     y_rot = x_oval * sin(rotation) + y_oval * cos(rotation)
-    
-    # Offset to the desired position
+
     x_oval = x .+ x_rot
     y_oval = y .+ y_rot
-    
-    return plot!(x_oval, y_oval, legend=false, xticks=false, yticks=false, grid=false, seriestype=:shape, lw=0, c=color, alpha=alpha)
+
+    poly!(ax, Point2f.(zip(x_oval, y_oval)), color=(color, alpha), strokewidth=0)
 end
 
 # ╔═╡ 190ab0db-ac8b-4ddd-ace3-90e07c2cffaa
 begin
-	scatter()
-	
-	draw_oval(1, 1, sepal_width_slider, sepal_length_slider, 1 * π / 8; color=:yellow, alpha=0.5)  
-	draw_oval(3, 2, petal_width_slider, petal_length_slider, 1 * π / 8; color=:green, alpha=0.5)
-	
-	title!("Visualising petal and sepal")
-	xlabel!("Width")
-	ylabel!("Length")
-	ylims!(-7,9)
-	xlims!(-5,9)
-	
-    annotate!(1, 1, text("Sepal", :black, 10, :right))
-    annotate!(3, 2, text("Petal", :black, 10, :center))
+    fig = Figure()
+    ax = Axis(fig[1,1],
+        title="Visualising petal and sepal",
+        xlabel="Width",
+        ylabel="Length")
+
+    draw_oval(ax, 1, 1, sepal_width_slider, sepal_length_slider, 1 * π / 8; color=:yellow, alpha=0.5)
+    draw_oval(ax, 3, 2, petal_width_slider, petal_length_slider, 1 * π / 8; color=:green, alpha=0.5)
+
+    ylims!(ax, -7, 9)
+    xlims!(ax, -5, 9)
+
+    text!(ax, 1, 1, text="Sepal", color=:black, fontsize=10, align=(:right, :center))
+    text!(ax, 3, 2, text="Petal", color=:black, fontsize=10, align=(:center, :center))
+    fig
 end
 
 
