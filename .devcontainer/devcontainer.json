@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json.
 {
     "name": "Julia on Pluto",
-    "image": "julia:1.12-bookworm",
+    "image": "ghcr.io/imperialcollegelondon/rcds-introduction-to-julia-devcontainer:latest",
     "remoteUser": "vscode",
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
@@ -9,7 +9,9 @@
         }
     },
     "onCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
-    "updateContentCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
+    "containerEnv": {
+        "JULIA_DEPOT_PATH": "/usr/local/julia-depot"
+    },
     "postAttachCommand": "julia --project=. -e 'using Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)'",
     "forwardPorts": [1234],
     "portsAttributes": {
