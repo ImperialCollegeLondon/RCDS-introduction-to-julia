@@ -26,6 +26,8 @@
                 "julialang.language-julia"
             ],
             "settings": {
+                "chat.sendElementsToChat.enabled": false,
+                "julia.executablePath": "/usr/local/bin/julia",
                 "markdown.preview.security.level": "allow-insecure-local-content",
                 "julia.additionalArgs": ["--project=."],
                 "julia.environmentPath": "${containerWorkspaceFolder}",
