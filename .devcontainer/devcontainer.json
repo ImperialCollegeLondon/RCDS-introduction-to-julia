@@ -1,32 +1,32 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/JuliaLang/devcontainer-templates/tree/main/src/julia
+// For format details, see https://aka.ms/devcontainer.json.
 {
     "name": "Julia on Pluto",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "settings": {
-        "markdown.preview.security.level": "allow-insecure-local-content",
-        "extensions.ignoreRecommendations": true,
-        "git.enableSmartCommit": true,
-        "git.confirmSync": false,
-        "git.autofetch": true,
-        "git.rebaseWhenSync": true,
-        "terminal.integrated.ignoreProcessKeybindingWarnings": true
-    },
-    // Features to add to the dev container. More info: https://containers.dev/features.
+    "image": "julia:1.12-bookworm",
+    "remoteUser": "vscode",
     "features": {
-        "ghcr.io/devcontainers/features/git-lfs:1": {}
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": false
+        }
     },
-    "postAttachCommand": "setsid /home/vscode/.juliaup/bin/julia --sysimage=intro_r_sysimage.so --project=. -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true; sleep(300); @info \"keepalive\"; end; Pluto.run(sysimage=\"intro_r_sysimage.so\", require_secret_for_open_links=false, require_secret_for_access=false)' 2>/dev/null",
-    "postCreateCommand": "curl -fsSL https://install.julialang.org | sh -s -- -y && /home/vscode/.juliaup/bin/julia --project=. -e 'using Pkg; Pkg.instantiate(allow_autoprecomp=false)'",
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "onCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
+    "updateContentCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
+    "postAttachCommand": "setsid julia --project=. -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true; sleep(300); @info \"keepalive\"; end; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' &",
     "forwardPorts": [1234],
+    "portsAttributes": {
+        "1234": {
+            "label": "Pluto",
+            "onAutoForward": "openPreview"
+        }
+    },
     "customizations": {
         "vscode": {
+            "extensions": [
+                "julialang.language-julia"
+            ],
             "settings": {
-                "julia.executablePath": "/home/vscode/.juliaup/bin/julia",
-                "julia.additionalArgs": ["--project=.", "--sysimage=intro_r_sysimage.so"],
-                "julia.environmentPath": "/workspaces/RCDS-introduction-to-julia",
+                "markdown.preview.security.level": "allow-insecure-local-content",
+                "julia.additionalArgs": ["--project=."],
+                "julia.environmentPath": "${containerWorkspaceFolder}",
                 "julia.format.enable": false,
                 "julia.lint.run": true,
                 "julia.lint.call": false,
@@ -35,8 +35,4 @@
             }
         }
     }
-    // Configure tool-specific properties.
-    // "customizations": {},
-    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    // "remoteUser": "root"
 }

@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -75,7 +75,9 @@ md"""
 """
 
 # ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
+#=╠═╡
 typeof(my_pi)
+  ╠═╡ =#
 
 # ╔═╡ a86206f9-4924-4546-8f70-4e70d6b63203
 md"""
@@ -94,7 +96,9 @@ These features also work to make Pluto Notebooks **reactive**.
 """
 
 # ╔═╡ 6fc44c18-1b85-45a0-8ec9-52e1b38d256f
+#=╠═╡
 print(my_pi)
+  ╠═╡ =#
 
 # ╔═╡ ae162d4b-d83f-4dd1-a6fc-742cd8e144be
 md"""
@@ -391,13 +395,15 @@ end
 # ╔═╡ 47410678-b3fa-4792-8481-60107d2962b2
 print("You'll need $(round(dry_ingred))g of dry ingredients and $(wet_ingred)ml of wet ingredients")
 
-# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-my_pi = "3.14"
-
 # ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
 # ╠═╡ disabled = true
 #=╠═╡
 my_pi = 3.14159
+  ╠═╡ =#
+
+# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
+#=╠═╡
+my_pi = "3.14"
   ╠═╡ =#
 
 # ╔═╡ Cell order:
