@@ -10,7 +10,7 @@
     },
     "onCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
     "updateContentCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
-    "postAttachCommand": "setsid julia --project=. -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true; sleep(300); @info \"keepalive\"; end; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' &",
+    "postAttachCommand": "julia --project=. -e 'using Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)'",
     "forwardPorts": [1234],
     "portsAttributes": {
         "1234": {

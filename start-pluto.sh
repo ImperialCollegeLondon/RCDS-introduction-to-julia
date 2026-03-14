@@ -1,1 +1,1 @@
-setsid /home/vscode/.juliaup/bin/julia --project=. -e 'using Pluto, Logging; global_logger(ConsoleLogger(stdout)); @async while true; sleep(120); @info "keepalive"; end; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)' 2>/dev/null
+julia --project=. -e 'using Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)'
