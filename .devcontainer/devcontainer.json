@@ -3,12 +3,6 @@
     "name": "Julia on Pluto",
     "image": "ghcr.io/imperialcollegelondon/rcds-introduction-to-julia-devcontainer:latest",
     "remoteUser": "vscode",
-    "features": {
-        "ghcr.io/devcontainers/features/common-utils:2": {
-            "installZsh": false
-        }
-    },
-    "onCreateCommand": "julia --project=. -e 'using Pkg; Pkg.instantiate()'",
     "containerEnv": {
         "JULIA_DEPOT_PATH": "/usr/local/julia-depot"
     },
