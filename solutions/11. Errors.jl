@@ -19,6 +19,7 @@ If you think code might fail, use a `try`/`catch` block. Without one, we get thi
 """
 
 # ╔═╡ 80cbae4f-bf25-4664-bc58-74abfa660655
+# @keepcode
 10 ÷ 0
 
 # ╔═╡ c6a5ea1e-aae9-47bd-ac5f-5722804927d2
@@ -62,6 +63,7 @@ Use `error()` for simple cases. Use `throw()` for custom errors.
 """
 
 # ╔═╡ 637a2cd0-cf19-4b29-8096-b0706a4e875c
+# @keepcode
 # This always throws an ErrorException
 error("This will generate a generic error message.")
 
@@ -73,11 +75,13 @@ Make your own error by defining a struct with `<: Exception`, then throw it.
 """
 
 # ╔═╡ 768e1d4e-620b-4499-b9da-a623b7957e54
+# @keepcode
 struct NotEvenError <: Exception
     msg::String
 end
 
 # ╔═╡ cad41a3c-475b-439e-a1c6-0d55c86f04f1
+# @keepcode
 function must_be_even(x)
     if x % 2 != 0
         throw(NotEvenError("Number $x is not even!"))
@@ -86,6 +90,7 @@ function must_be_even(x)
 end
 
 # ╔═╡ f1075e8e-77e0-4d57-8a22-da7daa61ebbb
+# @keepcode
 try
     must_be_even(3)
 catch err
@@ -104,6 +109,7 @@ Use `@assert` to make sure something is true. If not, it throws an `AssertionErr
 """
 
 # ╔═╡ 3ceba579-f756-4833-a266-6e0fd5d591e8
+# @keepcode
 x = 7
 
 # ╔═╡ 7309c3f8-728c-46c4-ab3c-8f3e48d417c7
@@ -117,6 +123,7 @@ A `finally` block always runs, even if there’s an error. Good for cleanup.
 """
 
 # ╔═╡ 291ab20f-a52e-4d97-89c1-6705082f5050
+# @keepcode
 try
     println("Doing something risky...")
     1 ÷ 0
@@ -139,6 +146,7 @@ Test it with `"123"` and `"hello"`.
 """
 
 # ╔═╡ 1467687b-f0ed-49d8-88f5-78f6f6d2076e
+# @keepcode
 function safe_parse_int(str)
     try
         parse(Int, str)
@@ -148,9 +156,11 @@ function safe_parse_int(str)
 end
 
 # ╔═╡ efbbd0c5-4f3c-4a21-86cb-179da9bb9473
+# @keepcode
 safe_parse_int("123")
 
 # ╔═╡ 4ac8dc23-dde1-43ec-a17b-51179b36161b
+# @keepcode
 safe_parse_int("hello")
 
 # ╔═╡ e0eb96a9-9682-4db7-8c8d-c18d31502066

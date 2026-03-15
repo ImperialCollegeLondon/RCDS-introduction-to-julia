@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -8,7 +8,7 @@ using InteractiveUtils
 md"""
 # Hello!
 
-And welcome to Introduction to Julia at the Graduate School. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
+And welcome to Introduction to Julia with RCDS at ECRI. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
 
 Pluto is a Notebook format. It is similar to Jupyter, but there are a few key differences:
 * Pluto is just for Julia
@@ -66,6 +66,7 @@ typeof(pi)
 typeof(😺)
 
 # ╔═╡ 0ce1ec85-18ff-44bb-a073-1ee07744f9eb
+# @keepcode
 # \:smi    ---> <tab> ---> select from drop-down ---> <enter>
 
 
@@ -75,9 +76,7 @@ md"""
 """
 
 # ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
-#=╠═╡
 typeof(my_pi)
-  ╠═╡ =#
 
 # ╔═╡ a86206f9-4924-4546-8f70-4e70d6b63203
 md"""
@@ -96,9 +95,8 @@ These features also work to make Pluto Notebooks **reactive**.
 """
 
 # ╔═╡ 6fc44c18-1b85-45a0-8ec9-52e1b38d256f
-#=╠═╡
+# @keepcode
 print(my_pi)
-  ╠═╡ =#
 
 # ╔═╡ ae162d4b-d83f-4dd1-a6fc-742cd8e144be
 md"""
@@ -108,9 +106,11 @@ Here's how comments look in Julia. You can type them in-line with your code.
 """
 
 # ╔═╡ b0c59c61-2f7d-47bd-9082-bcdd44fe6140
+# @keepcode
 # This is a single line comment, using the hashtag
 
 # ╔═╡ da18109b-dc2b-4c13-9c4b-65909928f4e1
+# @keepcode
 #=
 	This is a multi-line comment.
 	As with the single line comment,
@@ -144,27 +144,35 @@ Here are the infix operators for basic arithmetic.
 """
 
 # ╔═╡ 62331f66-fca5-49de-8d17-88b2180fb639
+# @keepcode
 addition = 3 + 7
 
 # ╔═╡ baa6e805-727d-4846-aaae-59b21ce9637e
+# @keepcode
 subtraction = 14 - 4
 
 # ╔═╡ 45dfff43-8eb6-483a-8af4-5e4429c78875
+# @keepcode
 multiplication = 866
 
 # ╔═╡ c9564bee-6a08-4278-9317-1eb2787a7545
+# @keepcode
 division = 100 / 10
 
 # ╔═╡ 6c4b845a-b4a0-4904-abbf-8f2bd44a5638
+# @keepcode
 exponentiation = 10 ^ 2
 
 # ╔═╡ c1781e49-49fb-4c18-867d-4e927f560563
+# @keepcode
 modulus = 101 % 2 # can also use mod()
 
 # ╔═╡ c9e299e5-9a35-4f41-957c-1c4e5e716ad9
+# @keepcode
 integer_div = 10 ÷ 3 # can also use div()
 
 # ╔═╡ daa92e6c-14a9-4f6d-b27c-a0c3acc71b8b
+# @keepcode
 let
 	summed = round(Int, addition + subtraction + multiplication + division + exponentiation + modulus + integer_div)
 	sum_text = md"The current sum is **$(round(Int, summed))**"
@@ -191,9 +199,11 @@ There are many ways to express numeric data in Julia.
 """
 
 # ╔═╡ ad2929a3-752c-4139-b13b-db97da7aee25
+# @keepcode
 forty_twos = 42, 42.0, 4.20e1, 4.20f1, 84//2, 0x2a
 
 # ╔═╡ 8a35a9d2-4486-4e9e-8c9d-f1a3d50e3dbc
+# @keepcode
 typeof(forty_twos)
 
 # ╔═╡ 77f3bc77-3071-47c2-bc55-106ba1e544da
@@ -216,6 +226,7 @@ s3 = "We'll get an "error" here, because our quotation marks are ambiguous"
 s4 = """No "error" here though!"""
 
 # ╔═╡ 6a024b42-2dd2-4adb-94bb-d8d526c137eb
+# @keepcode
 print("""Triple-quoted string literals
 		also ignore leading identation, which
 		makes it easy to print out long pieces
@@ -242,6 +253,7 @@ Then use the type constructor itself (e.g. `Int64`) to convert `days` to the sma
 """
 
 # ╔═╡ e9810f53-c58b-421a-962a-c5e6275da04e
+# @keepcode
 days = 252
 
 # ╔═╡ d1ddc739-7f88-4295-bc56-d40174eb650e
@@ -259,6 +271,7 @@ Try to convert the string of numbers below to an integer using `convert()`.
 """
 
 # ╔═╡ 2b0ed67b-27f3-4ce1-9da8-9f490098262d
+# @keepcode
 nums = "1234"
 
 # ╔═╡ 8ef119c8-a812-45b1-b552-9a0509f2b15e
@@ -275,12 +288,15 @@ Sometimes we'll want to include variables in text.
 """
 
 # ╔═╡ 49148636-6115-42ea-b7ae-231ae1ef5845
+# @keepcode
 name = "Jay"
 
 # ╔═╡ c6e6dd96-a743-4bf3-a36d-e5ea95a2b874
+# @keepcode
 num_fingers = 10
 
 # ╔═╡ ad71af4f-af8b-43ac-b0f7-dff9a79b6667
+# @keepcode
 num_toes = 10
 
 # ╔═╡ b8a37d04-62c8-4144-a389-29e0458e7c1b
@@ -347,6 +363,7 @@ Any variables defined inside a `let` block will be local to that block, and will
 """
 
 # ╔═╡ 48957cfd-9feb-4d6b-b21b-8cfe53dad98c
+# @keepcode
 another_total = let	item_exvat = 25.20 # re-using this variable name
 	duty = 0.10
 	extra_owing = item_exvat * vat + item_exvat * duty # using vat defined above
@@ -354,9 +371,11 @@ another_total = let	item_exvat = 25.20 # re-using this variable name
 end
 
 # ╔═╡ 49f842a5-e609-4285-85b3-6955d9c28c3b
+# @keepcode
 print("Notice that our item price hasn't changed: $item_exvat")
 
 # ╔═╡ 09eca0ae-d542-4f2e-968a-d0c2778ad244
+# @keepcode
 print("And that $duty isn't in this scope!")
 
 # ╔═╡ cb7aee24-e37e-4341-ae7f-0435456b8d4b
@@ -396,15 +415,26 @@ end
 print("You'll need $(round(dry_ingred))g of dry ingredients and $(wet_ingred)ml of wet ingredients")
 
 # ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
-# ╠═╡ disabled = true
-#=╠═╡
 my_pi = 3.14159
-  ╠═╡ =#
 
 # ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-#=╠═╡
-my_pi = "3.14"
-  ╠═╡ =#
+my_pi = 3.14
+
+# ╔═╡ 00000000-0000-0000-0000-000000000001
+PLUTO_PROJECT_TOML_CONTENTS = """
+[deps]
+"""
+
+# ╔═╡ 00000000-0000-0000-0000-000000000002
+PLUTO_MANIFEST_TOML_CONTENTS = """
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.12.5"
+manifest_format = "2.0"
+project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
+
+[deps]
+"""
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
@@ -481,3 +511,5 @@ my_pi = "3.14"
 # ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
 # ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
 # ╟─47410678-b3fa-4792-8481-60107d2962b2
+# ╟─00000000-0000-0000-0000-000000000001
+# ╟─00000000-0000-0000-0000-000000000002

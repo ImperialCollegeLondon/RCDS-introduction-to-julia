@@ -20,6 +20,7 @@ We can declare functions in Julia without giving Julia any information about the
 """
 
 # ╔═╡ 6bc5a40e-f5c7-4b89-b677-0c5657d885c6
+# @keepcode
 f(x) = x ^ 2
 
 # ╔═╡ 973bb8b9-8a93-4f29-9153-e8b1ef0192c7
@@ -28,9 +29,11 @@ and then Julia will determine on its own which input argument types make sense a
 """
 
 # ╔═╡ b2a34830-30a2-4f77-ab65-41c7e60458cf
+# @keepcode
 f(10)
 
 # ╔═╡ 1da91430-f8b3-4fa4-b49a-0d6a749a7f78
+# @keepcode
 f([1, 2, 3])
 
 # ╔═╡ 5bdd1024-baf0-4ac1-97f5-c98afaf95a10
@@ -137,6 +140,7 @@ end
 "hello" + "world"
 
 # ╔═╡ a8d5eacb-662b-4b6a-a9e0-24010c93213e
+# @keepcode
 if hasmethod(+, (String, String))
 	md"""!!! info "Great, now we can use + to concatenate strings!" """
 end
@@ -172,6 +176,7 @@ foo("hello", "hi")
 foo(3, 4)
 
 # ╔═╡ 60138419-d865-4696-9ac4-1511e8022205
+# @keepcode
 if (@isdefined foo) && hasmethod(foo, (Int, Int))
 	md"""!!! info "Looks like foo now works on integers!" """
 end
@@ -192,6 +197,7 @@ foo(3.0, 4.0)
 foo(3, 4)
 
 # ╔═╡ 110f5bae-965a-4d10-988a-f9d713b0d757
+# @keepcode
 v = rand(3, 3)
 
 # ╔═╡ aabd344c-e705-4589-9ba0-1466e3921312
@@ -205,21 +211,27 @@ Create a function `safe_square` that will attempt to square any number, any matr
 """
 
 # ╔═╡ 322a9aca-34e6-4a19-98a1-978a80990e41
+# @solution
 safe_square(x::Union{Number, Matrix}) = x ^ 2
 
 # ╔═╡ b4dcd4b1-253f-4c2b-af26-718e8fc8255c
+# @solution
 safe_square(x::Vector) = print("We don't do that here")
 
 # ╔═╡ 6b52ecad-b3c8-4a02-9421-05c4349541b0
+# @solution
 
 
 # ╔═╡ 59695412-230f-47c6-8eed-d4c315e3ecc1
+# @keepcode
 safe_square([1, 2, 3])
 
 # ╔═╡ 81819038-24af-4472-abde-302486208a41
+# @keepcode
 safe_square(10)
 
 # ╔═╡ 10952fca-d15e-499f-9770-fabef4834e7a
+# @keepcode
 safe_square(rand(1:2, 2, 2))
 
 # ╔═╡ Cell order:

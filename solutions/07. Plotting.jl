@@ -5,6 +5,7 @@ using Markdown
 using InteractiveUtils
 
 # ╔═╡ 7a251168-b76b-4d9a-8b34-be1e3d1c5a71
+# @keepcode
 using CairoMakie
 
 # ╔═╡ 9fbb35b2-27e2-11ef-093b-0bfff810e23f
@@ -23,10 +24,12 @@ In the name of scientific inquiry, let's use this notebook to examine the relati
 """
 
 # ╔═╡ f064dc5e-e258-4747-8e95-bf9435ae0c50
+# @keepcode
 global_temp = [14.4, 14.5, 14.8, 15.2, 15.5, 15.8]
 
 
 # ╔═╡ 2ce938fe-1554-405a-b0fc-36d699faa6b1
+# @keepcode
 num_pirates = [45000, 20000, 15000, 5000, 400, 17]
 
 # ╔═╡ e286b95f-e414-4b4f-989d-c9235eb12a7b
@@ -86,6 +89,7 @@ This still doesn't look quite right. The number of pirates has decreased since 1
 """
 
 # ╔═╡ c245eab8-feb9-41b7-857d-3d3d14abe991
+# @keepcode
 # @exercise
 begin
 	fig3 = Figure()
@@ -125,6 +129,7 @@ Let's plot a sine wave!
 """
 
 # ╔═╡ 39a6eac1-4ec4-45a7-8b01-662247bfc102
+# @keepcode
 x = 0:0.01:2π # an array with values 0 to 2π , at a step of 0.1
 
 # ╔═╡ 99ed55df-8d00-4954-890e-4dd04bad3bd4
@@ -148,6 +153,7 @@ plot y vs. x for $y = x^2$.  If you run into an issue, look at the hint below.
 """
 
 # ╔═╡ a7364ac8-20d5-4ace-8b50-8e4c0881ce2a
+# @solution
 # @exercise
 let
 	x = -10:10
@@ -170,6 +176,7 @@ md"""
 """
 
 # ╔═╡ 90f6b5ed-bff9-4e5b-a433-ce06666effd6
+# @keepcode
 begin
 	z = -10:10
 	fig5 = Figure()
@@ -188,6 +195,7 @@ The Makie documentation on layouts is available [here](https://docs.makie.org/st
 """
 
 # ╔═╡ bc776cd3-a9af-423f-8c21-7e1fc1e9a8cd
+# @solution
 # @exercise
 begin
 	fig6 = Figure()

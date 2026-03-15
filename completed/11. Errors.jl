@@ -139,7 +139,13 @@ Test it with `"123"` and `"hello"`.
 """
 
 # ╔═╡ 1467687b-f0ed-49d8-88f5-78f6f6d2076e
-# CODE GOES HERE
+function safe_parse_int(str)
+    try
+        parse(Int, str)
+    catch
+        "Not a valid integer"
+    end
+end
 
 # ╔═╡ efbbd0c5-4f3c-4a21-86cb-179da9bb9473
 safe_parse_int("123")

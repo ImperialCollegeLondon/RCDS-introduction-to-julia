@@ -99,9 +99,11 @@ There is lots of information in a type that we can explore. Let's use a type we'
 """
 
 # ╔═╡ ef945f46-f119-4f1d-becc-3f42b202a10b
+# @keepcode
 my_matrix = rand(3, 3)
 
 # ╔═╡ 6636dfa9-2bb4-4fa6-a682-05d5d91f6ca2
+# @keepcode
 typeof(my_matrix)
 
 # ╔═╡ c78d9d45-97b1-4e28-a66c-b90649905661
@@ -110,9 +112,11 @@ We can see the type of this object is `Matrix{Float64}`. Using that, let's look 
 """
 
 # ╔═╡ ab982842-9ac9-429e-873e-1b5cead37c4b
+# @keepcode
 Matrix{Float64}.name
 
 # ╔═╡ af0e1a5a-6891-41a2-82c4-009c908c9348
+# @keepcode
 Matrix{Float64}.parameters
 
 # ╔═╡ df954b97-f91b-4ad1-91ea-04abd2b1083a
@@ -121,9 +125,11 @@ The **parameters** of a type add to its definition. This is not just an `Array`,
 """
 
 # ╔═╡ 7c45e324-2b6d-4582-9574-ea6c1f10ab23
+# @keepcode
 Matrix{Float64}.super
 
 # ╔═╡ 9b3dd4b0-749a-4886-acef-ae6d8a5217df
+# @keepcode
 Matrix{Float64}.super.super.super
 
 # ╔═╡ a2ef390b-66d5-482f-890f-f0b06e2c10f5
@@ -153,15 +159,19 @@ As we get further up the hierarchy, types become **abstract**, which means they 
 """
 
 # ╔═╡ 0d775386-3144-4414-919e-773d01e67299
+# @keepcode
 abs_float = Real(2.0)
 
 # ╔═╡ 4c49c6b1-41a8-4e20-a2cb-1d65b9435248
+# @keepcode
 typeof(abs_float)
 
 # ╔═╡ c6faeac7-c37a-4656-b2d0-4187f4d53c94
+# @keepcode
 isabstracttype(Real)
 
 # ╔═╡ 2a517739-245b-45a5-a315-7baa87132cbd
+# @keepcode
 isabstracttype(Float64)
 
 # ╔═╡ 85f444af-6105-45a2-86aa-6ddef60e16b6
@@ -174,9 +184,11 @@ To check if an object is of a given type, we use `isa`. This check will succeed 
 """
 
 # ╔═╡ 8845f1e3-3b49-41d4-b397-cb2a93bd1876
+# @keepcode
 2.0 isa Float64
 
 # ╔═╡ 8bb749c2-a87e-4489-90b2-d9145ea54abc
+# @keepcode
 2.0 isa Number
 
 # ╔═╡ a994bf80-8ade-4052-8c69-f57f21962e55
@@ -187,9 +199,11 @@ This check also succeeds up  the hierarchy.
 """
 
 # ╔═╡ 41432c5a-cf4a-43ea-9f04-ca64ef436f25
+# @keepcode
 Float64 <: AbstractFloat
 
 # ╔═╡ 7971e53c-87a0-4a28-a879-622bea8c12f5
+# @keepcode
 Float64 <: Real
 
 # ╔═╡ 51d08a42-0974-474b-8b3c-678aaffd8dcb
@@ -230,15 +244,19 @@ For times when you are looking for one specific type or another, and not all the
 """
 
 # ╔═╡ f790dd5c-f7c6-4557-bcb4-7afca19c11a0
+# @keepcode
 Union{Int64, Float64}
 
 # ╔═╡ 5f039eb4-2791-4dd1-bb5d-af3bf3ba503f
+# @keepcode
 1 isa Union{Int64, Float64}
 
 # ╔═╡ 0350e57d-9680-4ae7-8c3a-6a054c8a94ff
+# @keepcode
 1.0 isa Union{Int64, Float64}
 
 # ╔═╡ 45f0c46c-87fd-443f-bb67-5fd9d4389499
+# @keepcode
 "1.0" isa Union{Int64, Float64}
 
 # ╔═╡ 9192d79a-be41-48e2-88fc-3a8e7a5af29d
@@ -247,9 +265,11 @@ To check if a type belongs to a Union, we use the subtype operator again.
 """
 
 # ╔═╡ 7293b54c-3369-446e-b741-dea6f0dadcfa
+# @keepcode
 Int64 <: Union{Int64, Float64}
 
 # ╔═╡ 3919d58e-bc4e-4fcf-b4a6-06fa9130c419
+# @keepcode
 Union{Int64, String} <: Union{Int64, Float64, String}
 
 # ╔═╡ 4f09292c-a05a-4f0a-95d4-d29498d13309
@@ -258,15 +278,19 @@ Storing a Union in a variable is useful for creating specific type annotations.
 """
 
 # ╔═╡ 9b373e76-b1e5-42a3-98ae-e0b1d651d762
+# @keepcode
 IntOrString = Union{Int, AbstractString}
 
 # ╔═╡ ee39f991-5462-4566-9f01-16bcda683cae
+# @keepcode
 1 :: IntOrString
 
 # ╔═╡ d209f482-81d5-4518-8b4c-4bab60bf5944
+# @keepcode
 "Hello!" :: IntOrString
 
 # ╔═╡ 64f9679d-ee9f-47ab-a02e-886fc38ffcfd
+# @keepcode
 1.0 :: IntOrString
 
 # ╔═╡ Cell order:

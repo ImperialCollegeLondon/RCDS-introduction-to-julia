@@ -1,8 +1,12 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
+
+# ╔═╡ d9fc5cba-f091-42c9-bbce-45ce03359425
+
+# ╔═╡ 90844152-f568-4cbb-bc53-e92c9943bbc6
 
 # ╔═╡ 49468286-27ce-11ef-004f-631745764f27
 md"""
@@ -18,9 +22,6 @@ Let's learn how to install and use a package. Pluto comes with its own package m
 We'll start by `using` the `Example` package
 """
 
-# ╔═╡ d9fc5cba-f091-42c9-bbce-45ce03359425
-
-
 # ╔═╡ 4785780e-6c9e-498b-b4ab-aa0e5df08cde
 if (@isdefined Example)
 	md"""
@@ -34,14 +35,12 @@ With `using`, we're able to use the objects in a package without having to prefi
 
 # ╔═╡ 40b93bdc-50e9-4a8a-81fa-b829d59eef0a
 
-
 # ╔═╡ be0bd41d-99d0-4ccb-a98a-e391baf5fba3
 md"""
 Now let's explore a more useful package - called `Colors`. This time we'll `import` it.
 """
 
 # ╔═╡ 7623747f-1b2f-4fcf-b3e3-9f07372dda52
-
 
 # ╔═╡ 275f8938-2dfd-4a08-9101-94afbca94f5c
 if (@isdefined Colors)
@@ -56,9 +55,7 @@ Because we've used `import`, we'll need to use the name of the package to refer 
 
 # ╔═╡ 8ca41ba3-8a1a-4fff-b973-76e4e398290e
 
-
 # ╔═╡ 03737338-b2a8-485a-a782-5407342a5d43
-
 
 # ╔═╡ f31a888d-9b46-49af-9ab0-22e0318c786c
 md"""
@@ -69,11 +66,7 @@ md"""
 
 """
 
-# ╔═╡ 90844152-f568-4cbb-bc53-e92c9943bbc6
-
-
 # ╔═╡ c3e828cc-9055-485c-9a4d-0e0d3bb2ea26
-
 
 # ╔═╡ eb0700c3-d921-42ce-8ca7-abb8feea61e1
 if (@isdefined my_primes) && length(my_primes) == 168

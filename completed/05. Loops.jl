@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -35,7 +35,6 @@ What do we think the following will produce?
 i = 1
 
 # ╔═╡ 19774eda-ecbc-4084-b414-87fad85cf92c
-# ╠═╡ show_logs = false
 while i <= 10
     println(i)
     i += 1
@@ -49,7 +48,9 @@ md"""
 """
 
 # ╔═╡ 8fe71b97-855a-4185-aa5c-92045302d4ef
-## YOUR CODE GOES HERE
+for i in 1:10
+    println(i)
+end
 
 # ╔═╡ 42ee3b22-fe61-410a-9839-fb928cbf5791
 md"""
@@ -164,7 +165,15 @@ md"""
 """
 
 # ╔═╡ f6767d55-ebaa-4d72-80eb-49f0d4643c13
-
+begin
+	a_matrix = zeros(Int, 3, 3)
+	for i in 1:3
+		for j in 1:3
+			a_matrix[j, i] = i + (3 * (j - 1))
+		end
+	end
+	a_matrix
+end
 
 # ╔═╡ 9288a8f1-8644-46db-b0c0-a94ef801eb9d
 let defined = @isdefined a_matrix
@@ -183,7 +192,7 @@ md"""
 """
 
 # ╔═╡ 02e92886-6053-485b-9515-4429e3cd9777
-
+squares_arr = [x^2 for x in 1:100]
 
 # ╔═╡ a07f6902-cb19-4f45-ac4c-97e0d365719d
 let defined = @isdefined squares_arr

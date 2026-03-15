@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -32,12 +32,9 @@ The :: operator can be used to attach type annotations to expressions and variab
 
 # ╔═╡ 3564b2ef-aae2-472d-9a0a-330ecb64c4de
 
-
 # ╔═╡ 3be0f096-3b68-47a2-9a03-77e85d7d055b
 
-
 # ╔═╡ c132827d-c21d-46d4-9716-e9e91b096366
-
 
 # ╔═╡ 07797d51-f73e-49d2-be78-9c4bb1be6f29
 md"""
@@ -51,7 +48,6 @@ Composite types are a special type that can store multiple independent pieces of
 
 # ╔═╡ fc65815f-563a-4465-b442-86893b38eb28
 
-
 # ╔═╡ f3f00241-1bd9-47dd-a4e2-34f9aa10fda8
 md"""
 We can create an instance of a composite type like so:
@@ -59,9 +55,7 @@ We can create an instance of a composite type like so:
 
 # ╔═╡ e55abae6-c5ed-449c-9662-088397188daa
 
-
 # ╔═╡ 56a115a1-93ff-4259-8472-28091b25ce1c
-
 
 # ╔═╡ fcfadbb8-1add-4795-bb01-4b654b6962f8
 md"""
@@ -70,7 +64,6 @@ Type annotations are enforced, so this is not allowed:
 
 # ╔═╡ 2a5789c1-f3f3-4128-abf2-ef6a7776c36e
 
-
 # ╔═╡ a68b3774-b3ad-4e45-b134-90ab5781059c
 md"""
 You can inspect the fields of a composite type with `fieldnames`:
@@ -78,14 +71,12 @@ You can inspect the fields of a composite type with `fieldnames`:
 
 # ╔═╡ 046e1a2e-63bd-4c9f-9064-13ea3e85cc4e
 
-
 # ╔═╡ 659e3bff-7c55-4836-b74b-7f9443c69325
 md"""
 And can access values of a composite object using the dot notation with their field names.
 """
 
 # ╔═╡ 59387139-f39c-48fa-9328-e9baf093952c
-
 
 # ╔═╡ f1df753b-2a85-4878-b1b4-8f796a815eba
 md"""
@@ -197,7 +188,6 @@ When defining a composite type, we can specify parameters. This gives you more f
 
 # ╔═╡ 19b99788-9cfb-4700-b880-4a52bfc4fd67
 
-
 # ╔═╡ 8ab5a279-70a0-4505-8c04-fecdb54e1816
 md"""
 Our point can have x and y coordinates of any `Real` type, but they must match.
@@ -205,15 +195,11 @@ Our point can have x and y coordinates of any `Real` type, but they must match.
 
 # ╔═╡ 851a01de-ba6e-4023-9cbd-4cf0a24d0f04
 
-
 # ╔═╡ 6ded03c4-51df-444d-b776-fe3be345c332
-
 
 # ╔═╡ 2ed03a08-67ff-41be-8073-b2a02533201f
 
-
 # ╔═╡ 43d464f1-c442-4db6-baec-8d95baac572d
-
 
 # ╔═╡ 27ee1271-4a73-4098-a0fe-0549b1951e39
 md"""
@@ -312,7 +298,7 @@ IntOrString = Union{Int, AbstractString}
 # ╠═5f039eb4-2791-4dd1-bb5d-af3bf3ba503f
 # ╠═0350e57d-9680-4ae7-8c3a-6a054c8a94ff
 # ╠═45f0c46c-87fd-443f-bb67-5fd9d4389499
-# ╟─9192d79a-be41-48e2-88fc-3a8e7a5af29d
+# ╠═9192d79a-be41-48e2-88fc-3a8e7a5af29d
 # ╠═7293b54c-3369-446e-b741-dea6f0dadcfa
 # ╠═3919d58e-bc4e-4fcf-b4a6-06fa9130c419
 # ╟─4f09292c-a05a-4f0a-95d4-d29498d13309

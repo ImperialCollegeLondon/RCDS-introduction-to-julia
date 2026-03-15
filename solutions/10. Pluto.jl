@@ -17,12 +17,14 @@ macro bind(def, element)
 end
 
 # ╔═╡ 327ac340-2893-11ef-3d4d-fd50d66d28e9
+# @keepcode
 using RDatasets, CairoMakie, PlutoUI, Statistics
 
 # ╔═╡ 09a9fdbe-9af3-4a48-9df4-a6f5976dde79
 
 
 # ╔═╡ 14925c90-3b62-45a5-8a7e-dfb78c1ee558
+# @keepcode
 iris = dataset("datasets", "iris")
 
 # ╔═╡ 474206da-8e01-4910-82df-e819d8411c76
@@ -34,6 +36,7 @@ We've got the species we're interested in specified inside an array. But wouldn'
 """
 
 # ╔═╡ f6874b8f-b74e-40a2-85ea-10c1b1cacb23
+# @keepcode
 #species = ["setosa", "versicolor", "virginica"]
 
 # ╔═╡ 2db4998a-ba87-4dc4-923c-3402f8ca3c40
@@ -44,6 +47,7 @@ We've got the species we're interested in specified inside an array. But wouldn'
 )
 
 # ╔═╡ b0728c0f-a570-4d52-92c5-cd41f391f9f6
+# @keepcode
 begin
 	filtered_data = filter(row -> row.Species in species, iris)
 
@@ -74,6 +78,7 @@ We can currently focus in on certain lengths by changing these variables we have
 """
 
 # ╔═╡ 5f35bd6b-eb69-4afb-b5b5-34b8a1335738
+# @keepcode
 # begin
 # 	min_length = 0
 # 	max_length = 7
@@ -88,6 +93,7 @@ We can currently focus in on certain lengths by changing these variables we have
 @bind max_length Slider(0.0:0.5:8.0, default=7.0)
 
 # ╔═╡ 8cba5133-5885-43d3-984d-8722d23ee91d
+# @keepcode
 begin
 
 		filtered_petal_data = filter(row -> row.PetalLength >= min_length && row.PetalLength <= max_length, iris)
@@ -117,6 +123,7 @@ In this last example, we visualise the differences in size between the petal and
 """
 
 # ╔═╡ 3e79bb43-f378-462f-8272-fdce8eed6b79
+# @keepcode
 @bind selected_species Select(
     ["setosa", "versicolor", "virginica"]
 )
@@ -127,6 +134,7 @@ md"""
 """
 
 # ╔═╡ bf76eba3-c6c7-4393-a913-e361161bed3c
+# @keepcode
 begin
 	# Function to calculate feature ranges for the selected species
 	function feature_ranges(species)
@@ -147,20 +155,25 @@ begin
 end
 
 # ╔═╡ e873d9ba-0c59-4fc4-90e9-8700be34f1b9
+# @keepcode
 begin
 	md"Petal Width $(@bind petal_width_slider Slider(petal_width_min:0.1:petal_width_max, default=(petal_width_min + petal_width_max) / 2, show_value=true))"
 end
 
 # ╔═╡ 13a284ab-57d1-462a-be1b-0e168d6c7d35
+# @keepcode
 md"Petal Length $(@bind petal_length_slider Slider(petal_length_min:0.1:petal_length_max, default=(petal_length_min + petal_length_max) / 2, show_value=true))"
 
 # ╔═╡ 9eaad914-82f1-43bf-9194-db8c0f1c70ef
+# @keepcode
 md"Sepal Width $(@bind sepal_width_slider Slider(sepal_width_min:0.1:sepal_width_max, default=(sepal_width_min + sepal_width_max) / 2, show_value=true))"
 
 # ╔═╡ 16a31c35-62d3-4395-9dc5-853abf9e2160
+# @keepcode
 md"Sepal Length $(@bind sepal_length_slider Slider(sepal_length_min:0.1:sepal_length_max, default=(sepal_length_min + sepal_length_max) / 2, show_value=true))"
 
 # ╔═╡ f143ef8b-c466-42c3-907e-fce1ba32fa1a
+# @keepcode
 function draw_oval(ax, x, y, width, height, rotation=0.0; color=:blue, alpha=0.5)
     t = range(0, stop=2π, length=100)  # Parameter for the ellipse
     x_oval = width * cos.(t)
@@ -179,6 +192,7 @@ function draw_oval(ax, x, y, width, height, rotation=0.0; color=:blue, alpha=0.5
 end
 
 # ╔═╡ 190ab0db-ac8b-4ddd-ace3-90e07c2cffaa
+# @keepcode
 begin
 	fig = Figure()
 	ax = Axis(fig[1,1],

@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.4
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -12,10 +12,9 @@ In Julia, we can build a conditional statement with `if`, `elseif`, `else`, and,
 """
 
 # ╔═╡ 44ac06f0-a578-4694-a9f3-203cba52e9d1
-grad_year = 2025
+graduation_year = 2025
 
-# ╔═╡ f23ad629-6ab7-4e7b-bcb5-6488224e023b
-
+# ╔═╡ 28ed87a2-9c16-492a-80f0-adeacf30e7ab
 
 # ╔═╡ a7be95cd-c9d0-4397-9da9-1c0cfc423f18
 md"""
@@ -56,7 +55,6 @@ which equates to
 
 # ╔═╡ cb98bf28-6193-453e-91b5-a9aafa8b463b
 
-
 # ╔═╡ 4801e0be-b866-478f-9cfd-0722322fcdcf
 md"""
 ## Short Circuits
@@ -70,7 +68,6 @@ which will return `true` if both `a` and `b` are true. If `a` is false, then the
 
 # ╔═╡ c9a128a7-e97b-4bc3-a938-acc5bee136b4
 
-
 # ╔═╡ 28773138-ff47-4b16-95b2-1a92651d04de
 md"""
 When `a` is true, then Julia will evaluate `b`. Here we use it for a simpler `if` logic:
@@ -78,14 +75,12 @@ When `a` is true, then Julia will evaluate `b`. Here we use it for a simpler `if
 
 # ╔═╡ c514a744-b1f6-4fba-9df8-c8d25662003b
 
-
 # ╔═╡ 7e3e660d-9776-4a71-a40e-b57f20ab6dc1
 md"""
 Also have a look at `||` for the logical **or** operation. It will short circuit when `a` is true, so can be used for a fallback when `a` is false.
 """
 
 # ╔═╡ 1293f7b3-5431-44f6-be86-743feca0325e
-
 
 # ╔═╡ a2d94f49-66ab-4538-8fe4-4f531938544e
 md"""
@@ -114,7 +109,6 @@ number = 6
 
 # ╔═╡ e302ce00-7ca8-496d-8de8-6f96b9dd034e
 ## YOUR CODE GOES HERE
-
 # ╔═╡ 80f17424-6f4f-4ac7-9a94-9999b75a31e7
 md"""
 2. Rewrite the code from **1.** using a ternary operator.
@@ -122,11 +116,10 @@ md"""
 
 # ╔═╡ 274db092-4449-442d-9723-06241f7c924e
 ## YOUR CODE GOES HERE
-
 # ╔═╡ Cell order:
 # ╟─cc18a366-138f-11ef-1a39-13a828c1e2cc
 # ╠═44ac06f0-a578-4694-a9f3-203cba52e9d1
-# ╠═f23ad629-6ab7-4e7b-bcb5-6488224e023b
+# ╠═28ed87a2-9c16-492a-80f0-adeacf30e7ab
 # ╟─a7be95cd-c9d0-4397-9da9-1c0cfc423f18
 # ╠═481683e5-7fef-4d95-8471-74a5426c3701
 # ╠═c80b42a3-ee7d-4894-a452-c0831c79417f

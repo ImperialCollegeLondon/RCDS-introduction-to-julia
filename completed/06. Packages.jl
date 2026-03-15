@@ -1,11 +1,14 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
 
 # ╔═╡ d9fc5cba-f091-42c9-bbce-45ce03359425
 using Example
+
+# ╔═╡ 90844152-f568-4cbb-bc53-e92c9943bbc6
+using Primes
 
 # ╔═╡ 49468286-27ce-11ef-004f-631745764f27
 md"""
@@ -69,11 +72,8 @@ md"""
 
 """
 
-# ╔═╡ 90844152-f568-4cbb-bc53-e92c9943bbc6
-
-
 # ╔═╡ c3e828cc-9055-485c-9a4d-0e0d3bb2ea26
-
+my_primes = primes(1000)
 
 # ╔═╡ eb0700c3-d921-42ce-8ca7-abb8feea61e1
 if (@isdefined my_primes) && length(my_primes) == 168

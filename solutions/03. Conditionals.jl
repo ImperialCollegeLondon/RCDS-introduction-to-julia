@@ -12,6 +12,7 @@ In Julia, we can build a conditional statement with `if`, `elseif`, `else`, and,
 """
 
 # ╔═╡ 44ac06f0-a578-4694-a9f3-203cba52e9d1
+# @keepcode
 graduation_year = 2025
 
 # ╔═╡ 28ed87a2-9c16-492a-80f0-adeacf30e7ab
@@ -29,14 +30,17 @@ We can include many `elseif` expressions, or none at all. The `else` keyword can
 """
 
 # ╔═╡ a4748c59-e1e2-408e-ae42-2dab937dc1ba
+# @keepcode
 divisor = 0
 
 # ╔═╡ 481683e5-7fef-4d95-8471-74a5426c3701
+# @keepcode
 if divisor > 0
 	10 / divisor
 end
 
 # ╔═╡ c80b42a3-ee7d-4894-a452-c0831c79417f
+# @keepcode
 if divisor > 0
 	10 / divisor
 else
@@ -99,6 +103,7 @@ The logical and / or operators are more commonly used when combining conditional
 """
 
 # ╔═╡ 00934f5e-767c-4654-a4e2-8fbd4ab322b3
+# @keepcode
 begin
 	has_key = true
 	has_password = true
@@ -116,9 +121,11 @@ md"""
 """
 
 # ╔═╡ 28149256-624c-4220-9fa1-ea608b59a7d9
+# @keepcode
 number = 6
 
 # ╔═╡ e302ce00-7ca8-496d-8de8-6f96b9dd034e
+# @solution
 if number % 2 == 0
     number
 else
@@ -131,6 +138,7 @@ md"""
 """
 
 # ╔═╡ 274db092-4449-442d-9723-06241f7c924e
+# @solution
 number % 2 == 0 ? number : "odd"
 
 # ╔═╡ Cell order:

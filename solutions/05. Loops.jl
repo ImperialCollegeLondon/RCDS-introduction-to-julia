@@ -32,9 +32,11 @@ What do we think the following will produce?
 """
 
 # ╔═╡ a11024b7-b8e7-49c7-9c02-3f17f4285952
+# @keepcode
 i = 1
 
 # ╔═╡ 19774eda-ecbc-4084-b414-87fad85cf92c
+# @keepcode
 while i <= 10
     println(i)
     i += 1
@@ -48,6 +50,7 @@ md"""
 """
 
 # ╔═╡ 8fe71b97-855a-4185-aa5c-92045302d4ef
+# @solution
 for i in 1:10
     println(i)
 end
@@ -58,6 +61,7 @@ We could use a for loop to generate the same powers matrix as we did in the last
 """
 
 # ╔═╡ bc9bd545-f879-423f-bba1-7cc9c6c19018
+# @keepcode
 let	
 	powers = zeros(Int, 8, 3)
 	for pow in 1:3
@@ -110,6 +114,7 @@ The above works, because 5.0 can be lesslessly converted to an integer. What hap
 """
 
 # ╔═╡ 3ff1c45f-b94f-4931-ae21-7061a73379ad
+# @keepcode
 powers[1, 1] = 5.6 # TODO fix this
 
 # ╔═╡ d47b461b-f11d-40bc-8af2-257edc95fb4f
@@ -118,6 +123,7 @@ Arrays that have an exact and concrete element type are generally significantly 
 """
 
 # ╔═╡ 72e36b42-f570-4716-ae99-c3583b6d5270
+# @keepcode
 fortytwosarray = [42, 42.0, 4.20e1, 4.20f1, 84//2, 0x2a]
 
 # ╔═╡ 79bdcea7-42da-4b2b-ad8b-434794e35486
@@ -134,12 +140,15 @@ We can disable this behaviour with `Any`.
 """
 
 # ╔═╡ c2616f57-3660-40f9-8604-8093cfefe41c
+# @keepcode
 fortytwos = Any[42, 42.0, 4.20e1, 4.20f1, 84//2, 0x2a]
 
 # ╔═╡ 3b592f79-121c-4584-9c12-b58046b644d4
+# @keepcode
 typeof(fortytwos)
 
 # ╔═╡ 2ec4d6e9-67f8-42c6-9ec5-3cf0f3917dd4
+# @keepcode
 for x in fortytwos
     show(x)
     println("\tisa $(typeof(x))")
@@ -165,6 +174,7 @@ md"""
 """
 
 # ╔═╡ f6767d55-ebaa-4d72-80eb-49f0d4643c13
+# @solution
 begin
 	a_matrix = zeros(Int, 3, 3)
 	for i in 1:3
@@ -176,6 +186,7 @@ begin
 end
 
 # ╔═╡ 9288a8f1-8644-46db-b0c0-a94ef801eb9d
+# @keepcode
 let defined = @isdefined a_matrix
 	if defined && a_matrix == [1 2 3; 4 5 6; 7 8 9] && eltype(a_matrix) == Int
 		md"""
@@ -192,9 +203,11 @@ md"""
 """
 
 # ╔═╡ 02e92886-6053-485b-9515-4429e3cd9777
+# @solution
 squares_arr = [x^2 for x in 1:100]
 
 # ╔═╡ a07f6902-cb19-4f45-ac4c-97e0d365719d
+# @keepcode
 let defined = @isdefined squares_arr
 	if defined && sum(squares_arr) == 338350
 		md"""

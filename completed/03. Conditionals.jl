@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -119,7 +119,11 @@ md"""
 number = 6
 
 # ╔═╡ e302ce00-7ca8-496d-8de8-6f96b9dd034e
-## YOUR CODE GOES HERE
+if number % 2 == 0
+    number
+else
+    "odd"
+end
 
 # ╔═╡ 80f17424-6f4f-4ac7-9a94-9999b75a31e7
 md"""
@@ -127,7 +131,7 @@ md"""
 """
 
 # ╔═╡ 274db092-4449-442d-9723-06241f7c924e
-## YOUR CODE GOES HERE
+number % 2 == 0 ? number : "odd"
 
 # ╔═╡ Cell order:
 # ╟─cc18a366-138f-11ef-1a39-13a828c1e2cc

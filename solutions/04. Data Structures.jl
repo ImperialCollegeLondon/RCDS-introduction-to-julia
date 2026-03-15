@@ -114,6 +114,7 @@ A good example is a contacts list, where we associate names with phone numbers.
 """
 
 # ╔═╡ 15654f58-7dd2-45f9-b6c4-d2efe82c81aa
+# @keepcode
 phonebook = Dict("Yiannis" => "0044000000", "Jay" => "071234567")
 
 # ╔═╡ f80fca09-4254-4994-aa12-557aeb75b723
@@ -138,6 +139,7 @@ Have a look at our phone book now.
 """
 
 # ╔═╡ b87db87b-288c-42c0-8492-be1d865f9fc7
+# @keepcode
 phonebook
 
 # ╔═╡ b8caf068-370a-4258-9d20-e21b713b2674
@@ -149,6 +151,7 @@ We can delete Yiannis' number from our contact list - and simultaenously grab hi
 yiannis = pop!(phonebook, "Yiannis")
 
 # ╔═╡ edae592b-273a-4c2d-94e0-473384ec8a23
+# @keepcode
 phonebook
 
 # ╔═╡ f75c7c4d-2441-40a8-b906-54b7375c70f5
@@ -165,6 +168,7 @@ Unlike tuples and arrays, dictionaries are not ordered. So, we can't index into 
 """
 
 # ╔═╡ 576eadb2-4dd2-4875-bc86-182768305222
+# @keepcode
 phonebook[1]
 
 # ╔═╡ 74f7b1ec-1116-43d6-8f55-3c3535d11700
@@ -186,6 +190,7 @@ Why doesn't this work?
 """
 
 # ╔═╡ 188b63d5-7e37-450f-883c-a694a9ff7803
+# @keepcode
 phonebook["Emergency"] = 911
 
 # ╔═╡ 085e3084-639a-417f-ac9a-b79fe7e310b8
@@ -198,6 +203,7 @@ What does the `type` of this new dictionary tell you? Compare its type with that
 """
 
 # ╔═╡ 3a22833c-3a27-4977-8dca-37d79c0cda01
+# @solution
 flexible_phonebook = Dict("Jenny" => 9671111, "Ghostbusters" => "1-800-GHOSTS")
 
 # ╔═╡ 61056783-ade1-4b71-bee1-956e7e3173f8
@@ -236,9 +242,11 @@ An array can store a sequence of numbers, or mixed type sequences
 """
 
 # ╔═╡ dba354d9-fa4f-4877-ac57-a656d9941cc6
+# @keepcode
 fibonacci = [1, 1, 2, 3, 5, 8, 13]
 
 # ╔═╡ caaa6917-99e9-4071-8e23-70ab98da8b3d
+# @keepcode
 mixture = [1, 1, 2, 3, "Yiannis", "Jay"]
 
 # ╔═╡ c03b83ad-4329-4236-a42a-8abd09d5cf84
@@ -281,12 +289,14 @@ For example, the following are arrays of arrays:
 """
 
 # ╔═╡ 2e4d7abe-42d8-4f79-996d-4a1cecfdaa39
+# @keepcode
 faves = [
 	["ice-cream", "chocolate", "eggs"],
 	["penguins", "cats", "spiders"]
 ]
 
 # ╔═╡ 2a717b83-1b83-4574-9518-549b2a963687
+# @keepcode
 nums = [
 	[1, 2, 3],
 	[4, 5],
@@ -307,9 +317,11 @@ Below are examples of 2D and 3D arrays. The functions `rand`, `ones` and `zeros`
 """
 
 # ╔═╡ d9d47e30-3af7-4efb-ba76-e1d99ae4fe0e
+# @keepcode
 rand(4, 3)
 
 # ╔═╡ 46689800-66f8-44d7-a934-9f4055efabad
+# @keepcode
 ones(2, 4, 3)
 
 # ╔═╡ 4aa6ea48-d002-46ce-9955-79cb33f0f536
@@ -320,12 +332,14 @@ Can you find the function to **sort** the random vector below?
 """
 
 # ╔═╡ e7ccec39-2a0e-4264-9764-bf368dc9e97c
+# @keepcode
 random = rand(1:100, 10)
 
 # ╔═╡ a03727d1-c807-4af5-bead-21d4b51ec62f
 sort!(random)
 
 # ╔═╡ 606af175-6429-4d1f-88fe-e7419eea430e
+# @keepcode
 let
 	sum_text = md"""The list in `random` is **$(issorted(random) ? "" : "not")** sorted:"""
 	if issorted(random)
@@ -345,6 +359,7 @@ Be careful when you want to copy arrays!
 """
 
 # ╔═╡ a65ec926-f255-41ee-a72b-4529bbb52522
+# @keepcode
 fibonacci
 
 # ╔═╡ c417bb33-3feb-438c-b087-38fa44449dc5
@@ -368,6 +383,7 @@ First, let's restore `fibonacci`, then create and edit the copy.
 """
 
 # ╔═╡ 768909de-9516-4b9a-ba15-f3310c6c1f39
+# @keepcode
 fibonacci[1] = 1
 
 # ╔═╡ c860617c-ea49-40b1-8e8d-32a478bcd987
@@ -392,6 +408,7 @@ Let's get more creative with our indexing and see ways we can access multiple el
 """
 
 # ╔═╡ 7bf9d6cd-ee3c-4c85-bd20-41566d0baa46
+# @keepcode
 squares = [1, 4, 9, 16, 25, 36, 49, 64]
 
 # ╔═╡ d1e43367-96ae-4754-99fb-cd9258bd8b4d
@@ -410,6 +427,7 @@ If, instead of commas, we use spaces, then the values are concatenated horizonta
 """
 
 # ╔═╡ 849bea4f-33ac-454b-a852-ee9fc4b572c3
+# @keepcode
 cubes = [1, 8, 27, 64, 125, 216, 343, 512]
 
 # ╔═╡ 7d551676-60ed-4db3-b06f-4918ec10cd89
@@ -465,6 +483,7 @@ Horizontal and vertical concatenation can be used together to as a simple syntax
 """
 
 # ╔═╡ 74c116ca-a1dd-4053-865b-32d983946e38
+# @keepcode
 [1 2 3 ; 4 5 6 ; 7 8 9]
 
 # ╔═╡ 8251e778-696a-491e-a8e7-f67904b91522
@@ -486,6 +505,7 @@ will give you an output array where the function `f` has been applied to all ele
 """
 
 # ╔═╡ df492ecd-89be-4f68-a312-367393cbe1b1
+# @keepcode
 square_it(x) = x ^ 2
 
 # ╔═╡ 05c7af21-6c87-424d-af89-56b9d99987dc
@@ -509,6 +529,7 @@ md"""
 """
 
 # ╔═╡ 7a2af27f-c1fe-49fd-a69a-7552108081f8
+# @keepcode
 broadcast(square_it, [1, 2, 3])
 
 # ╔═╡ 0f1ab62a-4e8e-42e5-b17b-d86b1d71b256
@@ -550,6 +571,7 @@ for a matrix `A`:
 """
 
 # ╔═╡ 36f36819-d6e2-4b6c-8ffe-5f20fad92363
+# @keepcode
 A = [i + 3*j for j in 0:2, i in 1:3]
 
 # ╔═╡ 24b49af6-fa80-42a2-a7ce-60ec390911ab
@@ -576,6 +598,7 @@ This dot syntax for broadcasting allows us to write relatively complex compound 
 """
 
 # ╔═╡ e78cf67b-0199-4fbd-a0b3-8471f70c0935
+# @keepcode
 A .+ 2 .* square_it.(A) ./ A
 
 # ╔═╡ 667b7172-38a0-43bf-8a21-6f83089e70ef
@@ -584,6 +607,7 @@ instead of...
 """
 
 # ╔═╡ 2903d387-4a2b-4f4a-ab35-cfe51c101464
+# @keepcode
 broadcast(x -> x + 2 * square_it(x) / x, A)
 
 # ╔═╡ ae91f504-a8ad-4122-9367-954a5e5fd5bf
@@ -594,9 +618,11 @@ md"""
 """
 
 # ╔═╡ f5e3f509-28c6-4ce4-893c-98d9d5a29f24
+# @keepcode
 A1 = map(x -> x + 2, A)
 
 # ╔═╡ ff1eecad-a82e-434a-a1f5-4d6e2c3bcf2e
+# @keepcode
 if A1 == [3 4 5; 6 7 8; 9 10 11]
 	md"""
 	$(Markdown.MD(Markdown.Admonition("correct", "Well done!!", [])))"""
@@ -608,9 +634,11 @@ md"""
 """
 
 # ╔═╡ 0396b6a4-5eb6-4720-98a6-3fad66f64bad
+# @keepcode
 A2 = (A1 .+ 1) .* 3
 
 # ╔═╡ 2f6d22e7-ec13-4062-8c65-ba42655df4ae
+# @keepcode
 if A2 == [12 15 18; 21 24 27; 30 33 36]
 	md"""
 	$(Markdown.MD(Markdown.Admonition("correct", "Well done!!", [])))"""

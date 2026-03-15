@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -186,7 +186,7 @@ Why doesn't this work?
 """
 
 # ╔═╡ 188b63d5-7e37-450f-883c-a694a9ff7803
-## TRY IT OUT HERE
+phonebook["Emergency"] = 911
 
 # ╔═╡ 085e3084-639a-417f-ac9a-b79fe7e310b8
 md"""
@@ -198,13 +198,13 @@ What does the `type` of this new dictionary tell you? Compare its type with that
 """
 
 # ╔═╡ 3a22833c-3a27-4977-8dca-37d79c0cda01
-## YOUR CODE GOES HERE
+flexible_phonebook = Dict("Jenny" => 9671111, "Ghostbusters" => "1-800-GHOSTS")
 
 # ╔═╡ 61056783-ade1-4b71-bee1-956e7e3173f8
-
+typeof(flexible_phonebook)
 
 # ╔═╡ 5a3eeb35-046a-4097-a4af-c76417972896
-
+typeof(phonebook)
 
 # ╔═╡ 2bd8adf0-ccb3-40e5-bbe6-e3671232f62a
 md"""
@@ -316,14 +316,14 @@ ones(2, 4, 3)
 md"""
 #### Quick Quiz
 
-Can you use the `sort` function to sort the random vector below?
+Can you find the function to **sort** the random vector below?
 """
 
 # ╔═╡ e7ccec39-2a0e-4264-9764-bf368dc9e97c
 random = rand(1:100, 10)
 
 # ╔═╡ a03727d1-c807-4af5-bead-21d4b51ec62f
-
+sort!(random)
 
 # ╔═╡ 606af175-6429-4d1f-88fe-e7419eea430e
 let
@@ -594,7 +594,7 @@ md"""
 """
 
 # ╔═╡ f5e3f509-28c6-4ce4-893c-98d9d5a29f24
-A1 = [] # TODO use a higher order function
+A1 = map(x -> x + 2, A)
 
 # ╔═╡ ff1eecad-a82e-434a-a1f5-4d6e2c3bcf2e
 if A1 == [3 4 5; 6 7 8; 9 10 11]
@@ -608,7 +608,7 @@ md"""
 """
 
 # ╔═╡ 0396b6a4-5eb6-4720-98a6-3fad66f64bad
-A2 = [] # TODO use dot broadcast
+A2 = (A1 .+ 1) .* 3
 
 # ╔═╡ 2f6d22e7-ec13-4062-8c65-ba42655df4ae
 if A2 == [12 15 18; 21 24 27; 30 33 36]

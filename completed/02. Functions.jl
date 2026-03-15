@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -23,6 +23,11 @@ The first uses the `function` block. Don't forget the `end` keyword to close the
 """
 
 # ╔═╡ 41fcdb73-1fd7-4427-9121-2389fdb2c6da
+"""
+	say_hi(name)
+
+Say hi to `name`.
+"""
 function say_hi(name)
 	println("Hi $name, nice to see you!")
 end
@@ -140,14 +145,13 @@ md"""
 """
 
 # ╔═╡ 6926ee86-e795-457a-86fc-a7241cbe6b51
-let
-	r = 3.09
+function find_area(r)
 	area = π * r ^ 2
 	round(area, digits=2)
 end	
 
 # ╔═╡ d533671b-48b5-451a-a9ff-01443a146a8b
-# Use this cell to call your function
+find_area(5)
 
 # ╔═╡ b8b9fb7f-4e9f-4f0d-b53b-7f6b35824daf
 md"""
@@ -210,12 +214,12 @@ round("DesLauriers")
 
 # ╔═╡ 15a20987-d560-429f-bc79-d67c70207382
 md"""
-We'll explore more of this when we look at multiple dispatch tomorrow and we'll come back to functions when we start learning about data structures!
+We'll explore more of this when we look at multiple dispatch tomorrow, and we'll come back to functions once we start learning about data structures!
 """
 
 # ╔═╡ Cell order:
 # ╟─b9584f90-d0de-11ee-0cd7-81185dad6eca
-# ╠═41fcdb73-1fd7-4427-9121-2389fdb2c6da
+# ╟─41fcdb73-1fd7-4427-9121-2389fdb2c6da
 # ╠═d4661b4e-90b1-4c01-8357-25cc2564b575
 # ╠═ac423cd7-387c-48d1-b5dd-480f6de01092
 # ╟─8f7a82da-2553-4f63-9a65-2310c768b442

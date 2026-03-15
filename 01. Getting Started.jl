@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -8,7 +8,7 @@ using InteractiveUtils
 md"""
 # Hello!
 
-And welcome to Introduction to Julia. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
+And welcome to Introduction to Julia with RCDS at ECRI. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
 
 Pluto is a Notebook format. It is similar to Jupyter, but there are a few key differences:
 * Pluto is just for Julia
@@ -28,7 +28,6 @@ In Julia, we usually use `println()` to print. And in Pluto, we use `Shift+Enter
 
 # ╔═╡ fc8b2f88-77a6-4a84-91a1-3efbd0e92317
 
-
 # ╔═╡ c964fe22-b644-460c-8960-ec66abeb36ff
 md"""
 You can see the Julia docs *as-you-type* with the `Live Docs` feature of Pluto. Try it below!
@@ -36,9 +35,7 @@ You can see the Julia docs *as-you-type* with the `Live Docs` feature of Pluto. 
 
 # ╔═╡ 013179fa-3e31-4527-92d0-5c725e56b619
 
-
 # ╔═╡ 78ea3d9b-9273-4aa4-b5b7-5eb8154ea5ab
-
 
 # ╔═╡ e452dcb5-b3da-4388-8f7f-1dd02ec48e8c
 md"""
@@ -49,27 +46,15 @@ To assign variables, we need name, value and equals sign. Julia is a dynamic lan
 
 # ╔═╡ 03b72a74-3428-40b7-94ac-fefe8d613aae
 
-
 # ╔═╡ 71473247-35ee-4bed-95a6-e34162c9fcf2
-
-
-# ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
-
-
-# ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
-
 
 # ╔═╡ 37f732d0-d24f-4e91-8c73-4b7ecfe0c6fe
 
-
 # ╔═╡ cb15ebd0-5580-4b98-b116-df3d58833eca
-
 
 # ╔═╡ 791aa777-d195-434f-ab57-599f4d771d4f
 
-
 # ╔═╡ 5f3bf493-96e4-47c4-a788-8d932f286886
-
 
 # ╔═╡ 0ce1ec85-18ff-44bb-a073-1ee07744f9eb
 # \:smi    ---> <tab> ---> select from drop-down ---> <enter>
@@ -80,8 +65,7 @@ md"""
 *Normally* in Julia, *outside* of a Pluto Notebook, we can re-assign new values to existing variables. Variables can even change type.
 """
 
-# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-
+# ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
 
 # ╔═╡ a86206f9-4924-4546-8f70-4e70d6b63203
 md"""
@@ -100,7 +84,9 @@ These features also work to make Pluto Notebooks **reactive**.
 """
 
 # ╔═╡ 6fc44c18-1b85-45a0-8ec9-52e1b38d256f
+#=╠═╡
 print(my_pi)
+  ╠═╡ =#
 
 # ╔═╡ ae162d4b-d83f-4dd1-a6fc-742cd8e144be
 md"""
@@ -152,7 +138,7 @@ addition = 3 + 7
 subtraction = 14 - 4
 
 # ╔═╡ 45dfff43-8eb6-483a-8af4-5e4429c78875
-multiplication = 20 * 5
+multiplication = 866
 
 # ╔═╡ c9564bee-6a08-4278-9317-1eb2787a7545
 division = 100 / 10
@@ -207,19 +193,15 @@ There are two common ways to represent text in Julia. Strings and characters.
 
 # ╔═╡ 5b1d25f3-c3c4-4f6f-8f95-1346502dc5f0
 
-
 # ╔═╡ 028698d3-3402-43b9-9aae-9f5f19dba623
-
 
 # ╔═╡ f869855c-680d-4573-9a0e-4f11a9cf0d9a
 
-
 # ╔═╡ 6300060a-78ed-45ba-ad20-4a09fba03ba7
-
 
 # ╔═╡ 6a024b42-2dd2-4adb-94bb-d8d526c137eb
 print("""Triple-quoted string literals
-		ignore leading identation, which
+		also ignore leading identation, which
 		makes it easy to print out long pieces
 		of important text""")
 
@@ -230,9 +212,7 @@ You might be wondering why we didn't just use single-quotes to take away the amb
 
 # ╔═╡ 073cc50d-eb4f-4fd8-b01f-eaeeaf4ab13b
 
-
-# ╔═╡ 76fbfd97-a15f-41e0-91b9-9b3ecd9caeed
-
+# ╔═╡ 1ff61dc1-c091-488e-905a-ac2e09be5803
 
 # ╔═╡ 4422a84a-c814-46b6-8fbb-b0ea3aaccbc3
 md"""
@@ -248,9 +228,7 @@ days = 252
 
 # ╔═╡ d1ddc739-7f88-4295-bc56-d40174eb650e
 
-
 # ╔═╡ 0072b42a-a17c-4035-a284-684b48d51483
-
 
 # ╔═╡ 0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 md"""
@@ -265,6 +243,7 @@ nums = "1234"
 
 # ╔═╡ 8ef119c8-a812-45b1-b552-9a0509f2b15e
 
+# ╔═╡ 12382d06-cd50-4908-82f2-5ea915fcb2fd
 
 # ╔═╡ 5bea5fea-c12f-45ea-9b13-02d8f9ce8810
 md"""
@@ -284,7 +263,6 @@ num_toes = 10
 
 # ╔═╡ b8a37d04-62c8-4144-a389-29e0458e7c1b
 
-
 # ╔═╡ 9b500b3c-9a7b-48e0-af69-65807fe9e77c
 md"""
 # Compound Expressions
@@ -300,14 +278,12 @@ So called `begin` blocks can include any number of subexpressions, and are allow
 
 # ╔═╡ 5b624e7d-e420-4aad-bf7e-0817b73c0e01
 
-
 # ╔═╡ d96242c0-f9af-4c80-b6d4-395915d7c4e4
 md"""
 `begin` blocks have a short hand form known as `(;)`, for short compound expressions. It looks like so:
 """
 
 # ╔═╡ c4517e92-b388-4f85-800a-e06bd1aae363
-
 
 # ╔═╡ 0b19ea0a-09c2-4d7d-b207-7b8d1504896e
 md"""
@@ -316,14 +292,12 @@ What is most interesting about compound expressions is that they evaluate to a s
 
 # ╔═╡ 7bfeee9c-7f4c-4e11-8d20-bd48e86e955e
 
-
 # ╔═╡ ef5dd965-e329-4fc6-b09a-a2dee7456954
 md"""
 Variables both inside and outside the compound expression are available for use globally.
 """
 
 # ╔═╡ 66d76b16-01e1-4e46-b56f-4bd6b4329774
-
 
 # ╔═╡ 68c9209e-3cde-40dd-a3d4-dba8c649c2a5
 md"""
@@ -362,8 +336,15 @@ The following pancake recipe serves six people
 Scale the recipe for four people and calculate the total amount of dry and wet ingredients into variables named `dry_ingred` and `wet_ingred`, respectively. Show your work ingredient by ingredient, and ensure that only these two named variables are created in the global Notebook scope.
 """
 
-# ╔═╡ 4cd71906-1c8c-4ae1-ae18-e18fdaa1f5ab
-## YOUR CODE GOES HERE
+# ╔═╡ 2d52e827-6587-4d56-8ba0-289bcf3fb335
+
+# ╔═╡ da8fe9be-cdb2-4838-99a4-629a9588d088
+
+# ╔═╡ 47410678-b3fa-4792-8481-60107d2962b2
+
+# ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
+
+# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
@@ -407,10 +388,10 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╠═028698d3-3402-43b9-9aae-9f5f19dba623
 # ╠═f869855c-680d-4573-9a0e-4f11a9cf0d9a
 # ╠═6300060a-78ed-45ba-ad20-4a09fba03ba7
-# ╟─6a024b42-2dd2-4adb-94bb-d8d526c137eb
+# ╠═6a024b42-2dd2-4adb-94bb-d8d526c137eb
 # ╟─78605c79-0ed0-4b4d-9f6a-ef73d9334546
 # ╠═073cc50d-eb4f-4fd8-b01f-eaeeaf4ab13b
-# ╠═76fbfd97-a15f-41e0-91b9-9b3ecd9caeed
+# ╠═1ff61dc1-c091-488e-905a-ac2e09be5803
 # ╟─4422a84a-c814-46b6-8fbb-b0ea3aaccbc3
 # ╠═e9810f53-c58b-421a-962a-c5e6275da04e
 # ╠═d1ddc739-7f88-4295-bc56-d40174eb650e
@@ -418,6 +399,7 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╟─0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 # ╠═2b0ed67b-27f3-4ce1-9da8-9f490098262d
 # ╠═8ef119c8-a812-45b1-b552-9a0509f2b15e
+# ╠═12382d06-cd50-4908-82f2-5ea915fcb2fd
 # ╟─5bea5fea-c12f-45ea-9b13-02d8f9ce8810
 # ╠═49148636-6115-42ea-b7ae-231ae1ef5845
 # ╠═c6e6dd96-a743-4bf3-a36d-e5ea95a2b874
@@ -436,4 +418,6 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╠═49f842a5-e609-4285-85b3-6955d9c28c3b
 # ╠═09eca0ae-d542-4f2e-968a-d0c2778ad244
 # ╟─cb7aee24-e37e-4341-ae7f-0435456b8d4b
-# ╠═4cd71906-1c8c-4ae1-ae18-e18fdaa1f5ab
+# ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
+# ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
+# ╟─47410678-b3fa-4792-8481-60107d2962b2

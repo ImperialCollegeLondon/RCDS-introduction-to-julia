@@ -28,7 +28,6 @@ With a `try / catch`, it looks like this:
 
 # ╔═╡ 593030f8-b32c-4582-a46a-526eecb64b48
 
-
 # ╔═╡ a6b5b49e-4a76-4060-89ba-4819f068e56c
 md"""
 The error is caught and your message prints instead.
@@ -37,7 +36,6 @@ You can also check for a specific error type:
 """
 
 # ╔═╡ ecc418f7-6fc6-47ec-b533-fb8642ccbed0
-
 
 # ╔═╡ ac842bd6-ded9-4caa-b590-bc099dc3db5d
 md"""
@@ -61,12 +59,14 @@ Make your own error by defining a struct with `<: Exception`, then throw it.
 """
 
 # ╔═╡ 768e1d4e-620b-4499-b9da-a623b7957e54
-# Define your error type
+struct NotEvenError <: Exception
+    msg::String
+end
 
 # ╔═╡ cad41a3c-475b-439e-a1c6-0d55c86f04f1
 function must_be_even(x)
     if x % 2 != 0
-        # and use it here!
+        throw(NotEvenError("Number $x is not even!"))
     end
     "Even: $x"
 end
@@ -93,7 +93,6 @@ Use `@assert` to make sure something is true. If not, it throws an `AssertionErr
 x = 7
 
 # ╔═╡ 7309c3f8-728c-46c4-ab3c-8f3e48d417c7
-
 
 # ╔═╡ c869e424-bfb0-4796-a3cc-094ba0863b6f
 md"""
@@ -125,7 +124,13 @@ Test it with `"123"` and `"hello"`.
 """
 
 # ╔═╡ 1467687b-f0ed-49d8-88f5-78f6f6d2076e
-# CODE GOES HERE
+function safe_parse_int(str)
+    try
+        parse(Int, str)
+    catch
+        "Not a valid integer"
+    end
+end
 
 # ╔═╡ efbbd0c5-4f3c-4a21-86cb-179da9bb9473
 safe_parse_int("123")

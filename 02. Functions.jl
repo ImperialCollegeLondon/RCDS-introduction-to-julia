@@ -24,12 +24,9 @@ The first uses the `function` block. Don't forget the `end` keyword to close the
 
 # ╔═╡ 41fcdb73-1fd7-4427-9121-2389fdb2c6da
 
-
 # ╔═╡ d4661b4e-90b1-4c01-8357-25cc2564b575
 
-
 # ╔═╡ ac423cd7-387c-48d1-b5dd-480f6de01092
-
 
 # ╔═╡ 8f7a82da-2553-4f63-9a65-2310c768b442
 md"""
@@ -43,7 +40,6 @@ Have a look:
 """
 
 # ╔═╡ 5cb275d2-f77c-4c41-a72c-df34109242fc
-
 
 # ╔═╡ 3df41292-8099-42ff-8037-c9992c102030
 md"""
@@ -62,7 +58,6 @@ What do we think the output of `another_square(2)` will return? Try it below.
 """
 
 # ╔═╡ cde6390c-32f9-455d-8412-b6c273a91432
-
 
 # ╔═╡ 8fe7f524-d075-4685-834f-48607d873567
 md"""
@@ -91,15 +86,11 @@ We could have defined the above functions like so:
 
 # ╔═╡ 639a498a-877b-4b3c-9d4a-974595f70228
 
-
 # ╔═╡ 8d9cf0df-bd73-41e5-99d0-f0d2053f57ea
-
 
 # ╔═╡ 05e47f0e-69b2-4afc-aa56-155269a1db51
 
-
 # ╔═╡ 003283d1-3d45-49fb-a33c-f4bd1189d602
-
 
 # ╔═╡ a845549a-8581-491c-b746-7edbc2f91a64
 md"""
@@ -117,15 +108,11 @@ Anonymous functions are so called because they are not named - useful if you don
 
 # ╔═╡ 75f29bba-6952-4839-be37-6aaa422ffbfc
 
-
 # ╔═╡ 351ca795-7a46-4968-8435-70406e32bf93
-
 
 # ╔═╡ ba3115af-240a-447c-be79-44604a2e6f08
 
-
 # ╔═╡ 9ca5c34a-d81c-4c32-b9a5-cbef54cba853
-
 
 # ╔═╡ b0d56dbd-17bd-411f-bb58-4525bfff0bf9
 md"""
@@ -136,14 +123,13 @@ md"""
 """
 
 # ╔═╡ 6926ee86-e795-457a-86fc-a7241cbe6b51
-let
-	r = 3.09
+function find_area(r)
 	area = π * r ^ 2
 	round(area, digits=2)
 end	
 
 # ╔═╡ d533671b-48b5-451a-a9ff-01443a146a8b
-# Use this cell to call your function
+find_area(5)
 
 # ╔═╡ b8b9fb7f-4e9f-4f0d-b53b-7f6b35824daf
 md"""
@@ -166,7 +152,6 @@ end
 
 # ╔═╡ 459a3757-f43d-4fc9-95a9-2b4ad86a6344
 ## YOUR CODE GOES HERE
-
 # ╔═╡ b653fc4a-ecca-4366-8bcf-37d03972e222
 md"""
 3. Inspect (un-hide) the cell above that displays the documentation for `do_some_math()` to see how documentation is added to a user-defined function. Add documentation for the `say_hi()` function we defined at the top of this notebook and search for it in the *Live Docs* to see it.
@@ -185,7 +170,6 @@ For example, `say_hi()` works on this character from a popular musical.
 
 # ╔═╡ d050a89c-a221-4443-9c30-2fb960a323f7
 
-
 # ╔═╡ 4f39208e-84bf-4f91-9970-aa61342965b5
 md"""
 Curiously, `square_it()` will work on a string. 
@@ -195,7 +179,6 @@ This is because the `*` operator is defined for string concatenation (joining st
 
 # ╔═╡ fcacb276-d701-4caa-bbb8-24926a88f7f4
 
-
 # ╔═╡ 01123b4b-2112-4034-990d-d255f8a88176
 md"""
 Sadly, I cannot `round()` my surname to simplify it.
@@ -203,15 +186,14 @@ Sadly, I cannot `round()` my surname to simplify it.
 
 # ╔═╡ d91d4423-b334-4a6d-a8df-82806d1a30a2
 
-
 # ╔═╡ 15a20987-d560-429f-bc79-d67c70207382
 md"""
-We'll explore more of this when we look at multiple dispatch tomorrow.
+We'll explore more of this when we look at multiple dispatch tomorrow, and we'll come back to functions once we start learning about data structures!
 """
 
 # ╔═╡ Cell order:
 # ╟─b9584f90-d0de-11ee-0cd7-81185dad6eca
-# ╠═41fcdb73-1fd7-4427-9121-2389fdb2c6da
+# ╟─41fcdb73-1fd7-4427-9121-2389fdb2c6da
 # ╠═d4661b4e-90b1-4c01-8357-25cc2564b575
 # ╠═ac423cd7-387c-48d1-b5dd-480f6de01092
 # ╟─8f7a82da-2553-4f63-9a65-2310c768b442

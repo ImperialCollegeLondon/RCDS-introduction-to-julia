@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -75,7 +75,9 @@ md"""
 """
 
 # ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
+#=╠═╡
 typeof(my_pi)
+  ╠═╡ =#
 
 # ╔═╡ a86206f9-4924-4546-8f70-4e70d6b63203
 md"""
@@ -94,7 +96,9 @@ These features also work to make Pluto Notebooks **reactive**.
 """
 
 # ╔═╡ 6fc44c18-1b85-45a0-8ec9-52e1b38d256f
+#=╠═╡
 print(my_pi)
+  ╠═╡ =#
 
 # ╔═╡ ae162d4b-d83f-4dd1-a6fc-742cd8e144be
 md"""
@@ -146,7 +150,7 @@ addition = 3 + 7
 subtraction = 14 - 4
 
 # ╔═╡ 45dfff43-8eb6-483a-8af4-5e4429c78875
-multiplication = 20 * 5
+multiplication = 866
 
 # ╔═╡ c9564bee-6a08-4278-9317-1eb2787a7545
 division = 100 / 10
@@ -241,10 +245,10 @@ Then use the type constructor itself (e.g. `Int64`) to convert `days` to the sma
 days = 252
 
 # ╔═╡ d1ddc739-7f88-4295-bc56-d40174eb650e
-
+days_float = convert(Float64, days)
 
 # ╔═╡ 0072b42a-a17c-4035-a284-684b48d51483
-
+Int16(days)
 
 # ╔═╡ 0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 md"""
@@ -258,7 +262,10 @@ Try to convert the string of numbers below to an integer using `convert()`.
 nums = "1234"
 
 # ╔═╡ 8ef119c8-a812-45b1-b552-9a0509f2b15e
+convert(Int, nums)
 
+# ╔═╡ 12382d06-cd50-4908-82f2-5ea915fcb2fd
+parse(Int, nums)
 
 # ╔═╡ 5bea5fea-c12f-45ea-9b13-02d8f9ce8810
 md"""
@@ -367,16 +374,36 @@ The following pancake recipe serves six people
 Scale the recipe for four people and calculate the total amount of dry and wet ingredients into variables named `dry_ingred` and `wet_ingred`, respectively. Show your work ingredient by ingredient, and ensure that only these two named variables are created in the global Notebook scope.
 """
 
-# ╔═╡ 4cd71906-1c8c-4ae1-ae18-e18fdaa1f5ab
-## YOUR CODE GOES HERE
+# ╔═╡ 2d52e827-6587-4d56-8ba0-289bcf3fb335
+dry_ingred = let
+	scale = 4/6
+	flour = 150 * scale
+	sugar = 50 * scale
+	powder = 5 * scale
+	total = flour + sugar + powder
+end
 
-# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-my_pi = "3.14"
+# ╔═╡ da8fe9be-cdb2-4838-99a4-629a9588d088
+wet_ingred = let
+	scale = 4/6
+	milk = 240 * scale
+	egg = 60 * scale
+	butter = 30 * scale
+	total = milk + egg + butter
+end
+
+# ╔═╡ 47410678-b3fa-4792-8481-60107d2962b2
+print("You'll need $(round(dry_ingred))g of dry ingredients and $(wet_ingred)ml of wet ingredients")
 
 # ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
 # ╠═╡ disabled = true
 #=╠═╡
 my_pi = 3.14159
+  ╠═╡ =#
+
+# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
+#=╠═╡
+my_pi = "3.14"
   ╠═╡ =#
 
 # ╔═╡ Cell order:
@@ -432,6 +459,7 @@ my_pi = 3.14159
 # ╟─0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 # ╠═2b0ed67b-27f3-4ce1-9da8-9f490098262d
 # ╠═8ef119c8-a812-45b1-b552-9a0509f2b15e
+# ╠═12382d06-cd50-4908-82f2-5ea915fcb2fd
 # ╟─5bea5fea-c12f-45ea-9b13-02d8f9ce8810
 # ╠═49148636-6115-42ea-b7ae-231ae1ef5845
 # ╠═c6e6dd96-a743-4bf3-a36d-e5ea95a2b874
@@ -450,4 +478,6 @@ my_pi = 3.14159
 # ╠═49f842a5-e609-4285-85b3-6955d9c28c3b
 # ╠═09eca0ae-d542-4f2e-968a-d0c2778ad244
 # ╟─cb7aee24-e37e-4341-ae7f-0435456b8d4b
-# ╠═4cd71906-1c8c-4ae1-ae18-e18fdaa1f5ab
+# ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
+# ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
+# ╟─47410678-b3fa-4792-8481-60107d2962b2

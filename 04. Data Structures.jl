@@ -4,21 +4,6 @@
 using Markdown
 using InteractiveUtils
 
-# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
-macro bind(def, element)
-    #! format: off
-    return quote
-        local iv = try Base.loaded_modules[Base.PkgId(Base.UUID("6e696c72-6542-2067-7265-42206c756150"), "AbstractPlutoDingetjes")].Bonds.initial_value catch; b -> missing; end
-        local el = $(esc(element))
-        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : iv(el)
-        el
-    end
-    #! format: on
-end
-
-# ╔═╡ 9ea71f1c-9ce3-41a8-ad3d-35b57a800438
-using PlutoUI
-
 # ╔═╡ 02950a3c-bc01-49f5-86f3-873a024e00d9
 md"""
 # Data structures
@@ -53,9 +38,7 @@ Syntax:
 
 # ╔═╡ f2411031-e042-495c-b2fd-e6b3499e1464
 
-
 # ╔═╡ 9df3caa6-fe69-43f5-8b4f-28aea7cce305
-
 
 # ╔═╡ 562980df-0eb4-463f-b3e0-7a2df2002560
 md"""
@@ -64,7 +47,6 @@ We can index into a tuple
 
 # ╔═╡ 8cfed49d-c553-4b63-b1a6-530feee76c32
 
-
 # ╔═╡ 1c0cf3b2-4968-4456-9c70-ea6b041b627e
 md"""
 But since they are immutable, we can't update them.
@@ -72,9 +54,7 @@ But since they are immutable, we can't update them.
 
 # ╔═╡ 544c53c1-f14c-40ca-bba5-34fc7dcde3d3
 
-
 # ╔═╡ 650bac1d-afeb-445e-a99c-74531ced9509
-
 
 # ╔═╡ f915a8a7-4b34-449d-9eac-bdfb30d752ab
 md"""
@@ -96,7 +76,6 @@ As you might guess, a `NamedTuple` is just like a `Tuple` except that each eleme
 
 # ╔═╡ f09d5c83-8481-4f28-9563-10f8b7c6448b
 
-
 # ╔═╡ 0461a502-bc97-4e79-9614-a1549ef3dd98
 md"""
 Like regular `Tuples`, `NamedTuples` are ordered, so we can retrieve their elements via indexing.
@@ -104,14 +83,12 @@ Like regular `Tuples`, `NamedTuples` are ordered, so we can retrieve their eleme
 
 # ╔═╡ 89005bd8-4fd4-49f9-94fa-14f6f5a639ec
 
-
 # ╔═╡ fdb43c68-6b07-42c2-a2e1-7bd0ec3f5801
 md"""
 But they come with the advantage of being able to access values by their name, using dot notation.
 """
 
 # ╔═╡ 7508e09d-ca7a-4f77-94c3-f2f627106771
-
 
 # ╔═╡ 4a0f73d5-458b-4764-a12e-35becb935732
 md"""
@@ -128,7 +105,7 @@ A good example is a contacts list, where we associate names with phone numbers.
 """
 
 # ╔═╡ 15654f58-7dd2-45f9-b6c4-d2efe82c81aa
-phonebook = Dict()
+phonebook = Dict("Yiannis" => "0044000000", "Jay" => "071234567")
 
 # ╔═╡ f80fca09-4254-4994-aa12-557aeb75b723
 md"""
@@ -137,14 +114,12 @@ In this example, each name is a **key** and each number is a **value**. Often ca
 
 # ╔═╡ 2ca467e7-89ce-48bb-a92b-ebea1bde9be8
 
-
 # ╔═╡ bf69d093-d29e-4cfd-a860-df186f09c919
 md"""
 We can add new entries to a dictionary by assigning a value to a new key.
 """
 
 # ╔═╡ ec9cd9be-94da-405e-82f7-f4ab90e47b7e
-
 
 # ╔═╡ 0f848cd7-59c1-42df-9983-c021660a6d81
 md"""
@@ -160,7 +135,6 @@ We can delete Yiannis' number from our contact list - and simultaenously grab hi
 """
 
 # ╔═╡ c2e61322-57f1-42c3-a793-6d350bef11b2
-
 
 # ╔═╡ edae592b-273a-4c2d-94e0-473384ec8a23
 phonebook
@@ -200,7 +174,7 @@ Why doesn't this work?
 """
 
 # ╔═╡ 188b63d5-7e37-450f-883c-a694a9ff7803
-## TRY IT OUT HERE
+phonebook["Emergency"] = 911
 
 # ╔═╡ 085e3084-639a-417f-ac9a-b79fe7e310b8
 md"""
@@ -213,12 +187,9 @@ What does the `type` of this new dictionary tell you? Compare its type with that
 
 # ╔═╡ 3a22833c-3a27-4977-8dca-37d79c0cda01
 ## YOUR CODE GOES HERE
-
 # ╔═╡ 61056783-ade1-4b71-bee1-956e7e3173f8
 
-
 # ╔═╡ 5a3eeb35-046a-4097-a4af-c76417972896
-
 
 # ╔═╡ 2bd8adf0-ccb3-40e5-bbe6-e3671232f62a
 md"""
@@ -238,9 +209,7 @@ For example, we might create an array to keep track of pokemon
 
 # ╔═╡ 54242790-e509-47a4-827d-51b92782a348
 
-
 # ╔═╡ dafe9fb9-ee8a-4457-ad59-2b448bb2dab3
-
 
 # ╔═╡ 77cb3556-1260-4d22-b0b4-cfa5ed77182a
 md"""
@@ -262,12 +231,9 @@ Once we have an array, we can grab individual pieces of data from inside that ar
 
 # ╔═╡ b8c7dacd-eed2-42ce-955b-e939841ecb72
 
-
 # ╔═╡ 705716bb-4081-46a5-a8f6-5f17c8fe2174
 
-
 # ╔═╡ 78ad482c-9d1e-4a55-ab20-4567f0e13542
-
 
 # ╔═╡ 0b07b4e6-cc0c-4883-b225-368e8a6d010a
 md"""
@@ -280,12 +246,9 @@ We can add another number to our fibonnaci sequence
 
 # ╔═╡ a7b04b21-b1c7-4d98-a82c-6f01c9dea713
 
-
 # ╔═╡ f83f093e-8874-470f-a0bb-d9155bbf095c
 
-
 # ╔═╡ a8bf1c9c-2b60-4e7f-bcf6-1ddf421da49f
-
 
 # ╔═╡ bb5e28e4-f2c8-4523-ab8d-dde2ea17663d
 md"""
@@ -314,7 +277,6 @@ We index twice to get at a individual value in the above:
 
 # ╔═╡ 4b93ee2e-804b-433c-a1f3-0fa1974cc1b6
 
-
 # ╔═╡ af90beef-3d90-4aef-93e9-94a261b32318
 md"""
 Below are examples of 2D and 3D arrays. The functions `rand`, `ones` and `zeros` all create multidimensional arrays populated with certain values. We'll look more closely at these near the end of this notebook.
@@ -330,20 +292,13 @@ ones(2, 4, 3)
 md"""
 #### Quick Quiz
 
-Can you find the function to **sort** the vector in `random` below? Enter some code in the empty cell, *run it* and then click `Generate random vector` to see if it worked!
+Can you find the function to **sort** the random vector below?
 """
 
-# ╔═╡ 1c09ee99-1062-4128-b76d-7cebfe57df4c
-@bind go Button("Generate random vector")
-
 # ╔═╡ e7ccec39-2a0e-4264-9764-bf368dc9e97c
-random = begin
-    go      
-    rand(1:100, 10)
-end
+random = rand(1:100, 10)
 
 # ╔═╡ a03727d1-c807-4af5-bead-21d4b51ec62f
-
 
 # ╔═╡ 606af175-6429-4d1f-88fe-e7419eea430e
 let
@@ -369,12 +324,9 @@ fibonacci
 
 # ╔═╡ c417bb33-3feb-438c-b087-38fa44449dc5
 
-
 # ╔═╡ 73a732a1-907e-41e7-8b8f-cd26364b2c55
 
-
 # ╔═╡ 004f455d-b11b-421e-bc83-4148e798ad03
-
 
 # ╔═╡ a0b04992-7e2c-4ca0-975a-c70528a26cb8
 md"""
@@ -392,12 +344,9 @@ fibonacci[1] = 1
 
 # ╔═╡ c860617c-ea49-40b1-8e8d-32a478bcd987
 
-
 # ╔═╡ bbfa6fcb-149f-43d4-b3f4-e126e955b909
 
-
 # ╔═╡ 7ff74fc3-1512-41c8-aa60-4f61b81b77a9
-
 
 # ╔═╡ 3e765e39-18f9-4f4f-a4b8-eaa1c59bb45b
 md"""
@@ -416,12 +365,9 @@ squares = [1, 4, 9, 16, 25, 36, 49, 64]
 
 # ╔═╡ d1e43367-96ae-4754-99fb-cd9258bd8b4d
 
-
 # ╔═╡ ba10f1ba-956a-45bc-a06e-8b8f9ede1acd
 
-
 # ╔═╡ a43e75a4-8c24-4623-8716-a47e7c2525a9
-
 
 # ╔═╡ c117cd08-dd9c-46d2-974b-335ea38c6784
 md"""
@@ -434,12 +380,9 @@ cubes = [1, 8, 27, 64, 125, 216, 343, 512]
 
 # ╔═╡ 7d551676-60ed-4db3-b06f-4918ec10cd89
 
-
 # ╔═╡ 8a0b257f-c5ae-4ca1-bbc7-649458799a13
 
-
 # ╔═╡ 2b369cc4-9a9e-4e47-8efb-2c83a79c7c35
-
 
 # ╔═╡ c022607b-67bd-47f0-96bd-419cbf5a5d32
 md"""
@@ -448,7 +391,6 @@ Spaces can concatenate same-length vectors to form matrices.
 
 # ╔═╡ eb924bd7-4747-42c6-a923-12581fa80871
 
-
 # ╔═╡ 5bcfe701-f64e-4d5e-a993-f9e4ed8bcf27
 md"""
 Matrices and multidimensional arrays are indexed in a single operation, with dimensions separated by commas.
@@ -456,12 +398,9 @@ Matrices and multidimensional arrays are indexed in a single operation, with dim
 
 # ╔═╡ 92b86675-421a-435c-be62-479e7d58208e
 
-
 # ╔═╡ a557b211-5607-4e77-92eb-ceb78eeff6c3
 
-
 # ╔═╡ e5f5ff4f-ffe0-4824-9b03-c2718babf159
-
 
 # ╔═╡ 80bf7b5e-08f9-47c5-b293-a5c00dbe5cac
 md"""
@@ -470,14 +409,12 @@ Semicolons perform vertical concatenation:
 
 # ╔═╡ 24e925e4-3ec9-43cb-92a0-00912eedc858
 
-
 # ╔═╡ 7b5e51e5-130a-41a6-ae61-2621da554a08
 md"""
 Compared with commas, which would just create an array of arrays:
 """
 
 # ╔═╡ 1dc8a02e-9599-418a-8bf6-4548e904523c
-
 
 # ╔═╡ c02284a6-82cd-41e1-9000-ba971b8c7891
 md"""
@@ -510,7 +447,6 @@ square_it(x) = x ^ 2
 
 # ╔═╡ 05c7af21-6c87-424d-af89-56b9d99987dc
 
-
 # ╔═╡ 4540f7c6-288e-4f44-9add-11f88de8a802
 md"""
 Here we've squared all the elements of the vector `[1, 2, 3]`, rather than squaring the vector `[1, 2, 3]`.
@@ -519,7 +455,6 @@ We could have instead passed an anonymous function to `map`, and this is a fairl
 """
 
 # ╔═╡ 34bbd4d9-d07e-4f4f-9533-e00966ec7135
-
 
 # ╔═╡ cbcde109-b060-410e-be39-05d678e4f469
 md"""
@@ -548,7 +483,6 @@ f.([1, 2, 3])
 
 # ╔═╡ 6339ff76-19c6-461b-bb45-06aac117bd91
 
-
 # ╔═╡ cdcf5329-cbcd-4690-b94d-ed91ffae6919
 md"""
 Notice again how different this is from calling 
@@ -574,7 +508,6 @@ A = [i + 3*j for j in 0:2, i in 1:3]
 
 # ╔═╡ 24b49af6-fa80-42a2-a7ce-60ec390911ab
 
-
 # ╔═╡ 805f2c03-6eac-489a-96c6-274076aeb749
 md"""
 We see that for a matrix, `A`,
@@ -586,7 +519,6 @@ On the other hand,
 """
 
 # ╔═╡ ef5c4890-2a63-47d1-a23e-f672a695fa18
-
 
 # ╔═╡ 5343b9a6-8d22-4ee9-bbc8-1c5fc4a3191e
 md"""
@@ -614,7 +546,7 @@ md"""
 """
 
 # ╔═╡ f5e3f509-28c6-4ce4-893c-98d9d5a29f24
-A1 = [] # TODO use a higher order function
+A1 = map(x -> x + 2, A)
 
 # ╔═╡ ff1eecad-a82e-434a-a1f5-4d6e2c3bcf2e
 if A1 == [3 4 5; 6 7 8; 9 10 11]
@@ -628,14 +560,13 @@ md"""
 """
 
 # ╔═╡ 0396b6a4-5eb6-4720-98a6-3fad66f64bad
-A2 = [] # TODO use dot broadcast
+A2 = (A1 .+ 1) .* 3
 
 # ╔═╡ 2f6d22e7-ec13-4062-8c65-ba42655df4ae
 if A2 == [12 15 18; 21 24 27; 30 33 36]
 	md"""
 	$(Markdown.MD(Markdown.Admonition("correct", "Well done!!", [])))"""
 end
-
 
 # ╔═╡ Cell order:
 # ╟─02950a3c-bc01-49f5-86f3-873a024e00d9
@@ -684,7 +615,7 @@ end
 # ╟─c03b83ad-4329-4236-a42a-8abd09d5cf84
 # ╠═b8c7dacd-eed2-42ce-955b-e939841ecb72
 # ╠═705716bb-4081-46a5-a8f6-5f17c8fe2174
-# ╠═78ad482c-9d1e-4a55-ab20-4567f0e13542
+# ╟─78ad482c-9d1e-4a55-ab20-4567f0e13542
 # ╟─0b07b4e6-cc0c-4883-b225-368e8a6d010a
 # ╠═a7b04b21-b1c7-4d98-a82c-6f01c9dea713
 # ╠═f83f093e-8874-470f-a0bb-d9155bbf095c
@@ -698,8 +629,7 @@ end
 # ╠═d9d47e30-3af7-4efb-ba76-e1d99ae4fe0e
 # ╠═46689800-66f8-44d7-a934-9f4055efabad
 # ╟─4aa6ea48-d002-46ce-9955-79cb33f0f536
-# ╟─1c09ee99-1062-4128-b76d-7cebfe57df4c
-# ╟─e7ccec39-2a0e-4264-9764-bf368dc9e97c
+# ╠═e7ccec39-2a0e-4264-9764-bf368dc9e97c
 # ╠═a03727d1-c807-4af5-bead-21d4b51ec62f
 # ╟─606af175-6429-4d1f-88fe-e7419eea430e
 # ╟─c83fdf90-98ef-4a46-b534-a7078f1c3e58
@@ -759,4 +689,3 @@ end
 # ╟─d12a4878-879a-446f-ac1c-21881ccb41ab
 # ╠═0396b6a4-5eb6-4720-98a6-3fad66f64bad
 # ╟─2f6d22e7-ec13-4062-8c65-ba42655df4ae
-# ╟─9ea71f1c-9ce3-41a8-ad3d-35b57a800438

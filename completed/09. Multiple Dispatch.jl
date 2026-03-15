@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.38
+# v0.20.8
 
 using Markdown
 using InteractiveUtils
@@ -103,10 +103,19 @@ Multiple dispatch makes our code generic and fast. Our code can be generic and f
 To see which method is being dispatched when we call a generic function, we can use `@which`:
 """
 
+# ╔═╡ 3685cabf-14f9-4f54-99f0-406f41f7abcf
+@which foo(3, 4)
+
 # ╔═╡ 570e6e00-2c79-4599-9179-fe69171f4d8d
 md"""
 Let's see what happens when we use `@which` with the addition operator!
 """
+
+# ╔═╡ 8e6b9058-3676-49cb-a0b9-a1feb2ca7405
+@which 3 + 4
+
+# ╔═╡ f2f2eef1-01f4-47df-8e1e-c16cbc2f54ed
+@which 3.0 + 4
 
 # ╔═╡ f7072093-1e94-4503-9f7c-1dbd093a9524
 md"""
@@ -123,12 +132,6 @@ begin
 	import Base: +
 	+(x::String, y::String) = x * y
 end
-
-# ╔═╡ 8e6b9058-3676-49cb-a0b9-a1feb2ca7405
-@which 3 + 4
-
-# ╔═╡ f2f2eef1-01f4-47df-8e1e-c16cbc2f54ed
-@which 3.0 + 4
 
 # ╔═╡ 671a1fa7-9763-45d3-91f4-b23cb7669656
 "hello" + "world"
@@ -179,9 +182,6 @@ foo("does it", "really?")
 # ╔═╡ 28a676c8-db53-4ca8-a78b-cfd550c05478
 methods(foo)
 
-# ╔═╡ 3685cabf-14f9-4f54-99f0-406f41f7abcf
-@which foo(3, 4)
-
 # ╔═╡ cc733fac-4090-4603-9846-c67f98a5ded9
 foo(3.0, 4)
 
@@ -205,27 +205,22 @@ Create a function `safe_square` that will attempt to square any number, any matr
 """
 
 # ╔═╡ 322a9aca-34e6-4a19-98a1-978a80990e41
-## YOUR CODE GOES HERE
+safe_square(x::Union{Number, Matrix}) = x ^ 2
 
 # ╔═╡ b4dcd4b1-253f-4c2b-af26-718e8fc8255c
-## YOUR CODE GOES HERE
+safe_square(x::Vector) = print("We don't do that here")
 
 # ╔═╡ 6b52ecad-b3c8-4a02-9421-05c4349541b0
-## YOUR CODE GOES HERE
 
-# ╔═╡ 44da2b10-982c-453e-b911-a2ee8324b7d2
-md"""
-#### Tests
-"""
 
 # ╔═╡ 59695412-230f-47c6-8eed-d4c315e3ecc1
-if (@isdefined safe_square) safe_square(10) end
+safe_square([1, 2, 3])
 
 # ╔═╡ 81819038-24af-4472-abde-302486208a41
-if (@isdefined safe_square) safe_square(rand(1:2, 2, 2)) end
+safe_square(10)
 
 # ╔═╡ 10952fca-d15e-499f-9770-fabef4834e7a
-if (@isdefined safe_square) safe_square([1, 2, 3]) end
+safe_square(rand(1:2, 2, 2))
 
 # ╔═╡ Cell order:
 # ╟─e2c97e92-288b-11ef-2ed8-33c80ec5cb58
@@ -271,7 +266,6 @@ if (@isdefined safe_square) safe_square([1, 2, 3]) end
 # ╠═322a9aca-34e6-4a19-98a1-978a80990e41
 # ╠═b4dcd4b1-253f-4c2b-af26-718e8fc8255c
 # ╠═6b52ecad-b3c8-4a02-9421-05c4349541b0
-# ╟─44da2b10-982c-453e-b911-a2ee8324b7d2
 # ╠═59695412-230f-47c6-8eed-d4c315e3ecc1
 # ╠═81819038-24af-4472-abde-302486208a41
 # ╠═10952fca-d15e-499f-9770-fabef4834e7a

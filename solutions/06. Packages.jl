@@ -25,6 +25,7 @@ We'll start by `using` the `Example` package
 """
 
 # ╔═╡ 4785780e-6c9e-498b-b4ab-aa0e5df08cde
+# @keepcode
 if (@isdefined Example)
 	md"""
 	$(Markdown.MD(Markdown.Admonition("info", "When you ran the cell above, Pluto installed the Example package for you!", [])))"""
@@ -47,6 +48,7 @@ Now let's explore a more useful package - called `Colors`. This time we'll `impo
 import Colors
 
 # ╔═╡ 275f8938-2dfd-4a08-9101-94afbca94f5c
+# @keepcode
 if (@isdefined Colors)
 	md"""
 	$(Markdown.MD(Markdown.Admonition("info", "Great, now Colors is installed too!", [])))"""
@@ -76,6 +78,7 @@ md"""
 my_primes = primes(1000)
 
 # ╔═╡ eb0700c3-d921-42ce-8ca7-abb8feea61e1
+# @keepcode
 if (@isdefined my_primes) && length(my_primes) == 168
 	md"""
 	$(Markdown.MD(Markdown.Admonition("correct", "Great, there are 168 prime numbers in there.", [])))"""

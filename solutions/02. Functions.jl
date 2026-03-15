@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -60,6 +60,7 @@ Here is another function to square some input.
 """
 
 # ╔═╡ c8ab6cb1-1027-437b-861d-4cc04a1e4ca0
+# @keepcode
 function another_square(x)
 	x ^ 2
 	y = 10
@@ -81,12 +82,14 @@ Fix the code in the cell below to make the function work as expected.
 """
 
 # ╔═╡ 128a3167-c6ff-46e6-b4e6-47d38dfc3f1f
+# @keepcode
 function explicit_square(x)
 	x ^ 2 # TODO: Fix this line
 	y = 10
 end
 
 # ╔═╡ 6eb77158-9ba9-44ba-8115-36b78e322cca
+# @keepcode
 explicit_square(2)
 
 # ╔═╡ d0af7c46-2c38-4e74-9698-46a453d4f213
@@ -145,12 +148,14 @@ md"""
 """
 
 # ╔═╡ 6926ee86-e795-457a-86fc-a7241cbe6b51
+# @keepcode
 function find_area(r)
 	area = π * r ^ 2
 	round(area, digits=2)
 end	
 
 # ╔═╡ d533671b-48b5-451a-a9ff-01443a146a8b
+# @keepcode
 find_area(5)
 
 # ╔═╡ b8b9fb7f-4e9f-4f0d-b53b-7f6b35824daf
@@ -162,6 +167,7 @@ md"""
 """
 
 # ╔═╡ 631efa6f-c01d-4e8a-a568-075291da84e7
+# @keepcode
 """
 	do_some_math(num, math_text, math_fun)
 
@@ -173,6 +179,7 @@ function do_some_math(num, math_text, math_fun)
 end
 
 # ╔═╡ 459a3757-f43d-4fc9-95a9-2b4ad86a6344
+# @solution
 do_some_math(5, "to the power of 10", x -> x ^ 10)
 
 # ╔═╡ b653fc4a-ecca-4366-8bcf-37d03972e222
