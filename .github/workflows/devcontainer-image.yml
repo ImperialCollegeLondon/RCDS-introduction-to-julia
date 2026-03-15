@@ -9,7 +9,6 @@ on:
       - ".devcontainer/**"
       - ".github/workflows/devcontainer-image.yml"
       - "Project.toml"
-      - "Manifest.toml"
 
 permissions:
   contents: read

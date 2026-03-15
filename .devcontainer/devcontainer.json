@@ -6,7 +6,7 @@
     "containerEnv": {
         "JULIA_DEPOT_PATH": "/usr/local/julia-depot"
     },
-    "postAttachCommand": "julia --project=. -e 'using Pluto; Pluto.run(require_secret_for_open_links=false, require_secret_for_access=false)'",
+    "postAttachCommand": "./start-pluto.sh",
     "forwardPorts": [1234],
     "portsAttributes": {
         "1234": {
