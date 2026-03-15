@@ -3,6 +3,10 @@ FROM julia:1.12-bookworm
 ENV JULIA_DEPOT_PATH=/usr/local/julia-depot
 ENV JULIA_PKG_PRECOMPILE_AUTO=0
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
+
 RUN useradd --create-home --shell /bin/bash --uid 1000 vscode
 
 WORKDIR /tmp/julia-project
