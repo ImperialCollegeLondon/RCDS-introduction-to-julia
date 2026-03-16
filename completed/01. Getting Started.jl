@@ -140,13 +140,13 @@ Here are the infix operators for basic arithmetic.
 """
 
 # ╔═╡ 62331f66-fca5-49de-8d17-88b2180fb639
-addition = 3 + 7
+addition = 2 + 7
 
 # ╔═╡ baa6e805-727d-4846-aaae-59b21ce9637e
-subtraction = 14 - 4
+subtraction = 10 - 4
 
 # ╔═╡ 45dfff43-8eb6-483a-8af4-5e4429c78875
-multiplication = 866
+multiplication = 8 * 7
 
 # ╔═╡ c9564bee-6a08-4278-9317-1eb2787a7545
 division = 100 / 10
@@ -397,21 +397,6 @@ my_pi = 3.14159
 # ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
 my_pi = 3.14
 
-# ╔═╡ 00000000-0000-0000-0000-000000000001
-PLUTO_PROJECT_TOML_CONTENTS = """
-[deps]
-"""
-
-# ╔═╡ 00000000-0000-0000-0000-000000000002
-PLUTO_MANIFEST_TOML_CONTENTS = """
-# This file is machine-generated - editing it directly is not advised
-
-julia_version = "1.12.5"
-manifest_format = "2.0"
-project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
-
-[deps]
-"""
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
@@ -488,5 +473,3 @@ project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 # ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
 # ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
 # ╟─47410678-b3fa-4792-8481-60107d2962b2
-# ╟─00000000-0000-0000-0000-000000000001
-# ╟─00000000-0000-0000-0000-000000000002

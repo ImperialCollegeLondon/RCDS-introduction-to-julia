@@ -130,13 +130,13 @@ Here are the infix operators for basic arithmetic.
 """
 
 # ╔═╡ 62331f66-fca5-49de-8d17-88b2180fb639
-addition = 3 + 7
+addition = 2 + 7
 
 # ╔═╡ baa6e805-727d-4846-aaae-59b21ce9637e
-subtraction = 14 - 4
+subtraction = 10 - 4
 
 # ╔═╡ 45dfff43-8eb6-483a-8af4-5e4429c78875
-multiplication = 866
+multiplication = 8 * 7
 
 # ╔═╡ c9564bee-6a08-4278-9317-1eb2787a7545
 division = 100 / 10
@@ -225,9 +225,9 @@ Then use the type constructor itself (e.g. `Int64`) to convert `days` to the sma
 days = 252
 
 # ╔═╡ d1ddc739-7f88-4295-bc56-d40174eb650e
-
+## YOUR CODE GOES HERE
 # ╔═╡ 0072b42a-a17c-4035-a284-684b48d51483
-
+## YOUR CODE GOES HERE
 # ╔═╡ 0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 md"""
 Try to convert the string of numbers below to an integer using `convert()`. 
@@ -240,7 +240,7 @@ Try to convert the string of numbers below to an integer using `convert()`.
 nums = "1234"
 
 # ╔═╡ 8ef119c8-a812-45b1-b552-9a0509f2b15e
-
+## YOUR CODE GOES HERE
 # ╔═╡ 12382d06-cd50-4908-82f2-5ea915fcb2fd
 
 # ╔═╡ 5bea5fea-c12f-45ea-9b13-02d8f9ce8810
@@ -289,6 +289,12 @@ What is most interesting about compound expressions is that they evaluate to a s
 """
 
 # ╔═╡ 7bfeee9c-7f4c-4e11-8d20-bd48e86e955e
+total_price = begin
+	item_exvat = 19.90
+	vat = 0.20
+	vat_owing = item_exvat * vat
+	total_item_price = item_exvat + vat_owing
+end	
 
 # ╔═╡ ef5dd965-e329-4fc6-b09a-a2dee7456954
 md"""
@@ -296,6 +302,7 @@ Variables both inside and outside the compound expression are available for use 
 """
 
 # ╔═╡ 66d76b16-01e1-4e46-b56f-4bd6b4329774
+print("We have $total_seats seats in total, and the total cost is £$total_price.")
 
 # ╔═╡ 68c9209e-3cde-40dd-a3d4-dba8c649c2a5
 md"""
@@ -335,30 +342,14 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 """
 
 # ╔═╡ 2d52e827-6587-4d56-8ba0-289bcf3fb335
-
+## YOUR CODE GOES HERE
 # ╔═╡ da8fe9be-cdb2-4838-99a4-629a9588d088
-
+## YOUR CODE GOES HERE
 # ╔═╡ 47410678-b3fa-4792-8481-60107d2962b2
 
 # ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
 
 # ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-
-# ╔═╡ 00000000-0000-0000-0000-000000000001
-PLUTO_PROJECT_TOML_CONTENTS = """
-[deps]
-"""
-
-# ╔═╡ 00000000-0000-0000-0000-000000000002
-PLUTO_MANIFEST_TOML_CONTENTS = """
-# This file is machine-generated - editing it directly is not advised
-
-julia_version = "1.12.5"
-manifest_format = "2.0"
-project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
-
-[deps]
-"""
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
@@ -435,5 +426,3 @@ project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 # ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
 # ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
 # ╟─47410678-b3fa-4792-8481-60107d2962b2
-# ╟─00000000-0000-0000-0000-000000000001
-# ╟─00000000-0000-0000-0000-000000000002

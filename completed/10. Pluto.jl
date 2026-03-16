@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -34,16 +34,16 @@ We've got the species we're interested in specified inside an array. But wouldn'
 """
 
 # ╔═╡ f6874b8f-b74e-40a2-85ea-10c1b1cacb23
-#species = ["setosa", "versicolor", "virginica"]
+species = ["setosa", "versicolor", "virginica"]
 
 # ╔═╡ 2db4998a-ba87-4dc4-923c-3402f8ca3c40
-@bind species MultiCheckBox(
-	["setosa", "versicolor", "virginica"],
-	default=["setosa", "versicolor", "virginica"]
-)
+# @bind species MultiCheckBox(
+# 	["setosa", "versicolor", "virginica"],
+# 	default=["setosa", "versicolor", "virginica"]
+# )
 
 # ╔═╡ b0728c0f-a570-4d52-92c5-cd41f391f9f6
-begin
+let
 	filtered_data = filter(row -> row.Species in species, iris)
 
 	if !isempty(filtered_data)
@@ -73,19 +73,19 @@ We can currently focus in on certain lengths by changing these variables we have
 """
 
 # ╔═╡ 5f35bd6b-eb69-4afb-b5b5-34b8a1335738
-# begin
-# 	min_length = 0
-# 	max_length = 7
-# end
+begin
+	min_length = 0
+	max_length = 7
+end
 
 # ╔═╡ 3e88c67a-848d-40ad-973e-3805b3d90eb8
-@bind min_length Slider(0.0:0.5:8.0, default=1.0)
+#@bind min_length PlutoUI.Slider(0.0:0.5:8.0, default=1.0)
 
 # ╔═╡ abc4aa4f-f69e-4e46-9ab1-e01ff8acb4e2
-@bind max_length Slider(0.0:0.5:8.0, default=7.0)
+#@bind max_length PlutoUI.Slider(0.0:0.5:8.0, default=7.0)
 
 # ╔═╡ 8cba5133-5885-43d3-984d-8722d23ee91d
-begin
+let
 
 		filtered_petal_data = filter(row -> row.PetalLength >= min_length && row.PetalLength <= max_length, iris)
 		if !isempty(filtered_petal_data)
@@ -145,17 +145,17 @@ end
 
 # ╔═╡ e873d9ba-0c59-4fc4-90e9-8700be34f1b9
 begin
-	md"Petal Width $(@bind petal_width_slider Slider(petal_width_min:0.1:petal_width_max, default=(petal_width_min + petal_width_max) / 2, show_value=true))"
+	md"Petal Width $(@bind petal_width_slider PlutoUI.Slider(petal_width_min:0.1:petal_width_max, default=(petal_width_min + petal_width_max) / 2, show_value=true))"
 end
 
 # ╔═╡ 13a284ab-57d1-462a-be1b-0e168d6c7d35
-md"Petal Length $(@bind petal_length_slider Slider(petal_length_min:0.1:petal_length_max, default=(petal_length_min + petal_length_max) / 2, show_value=true))"
+md"Petal Length $(@bind petal_length_slider PlutoUI.Slider(petal_length_min:0.1:petal_length_max, default=(petal_length_min + petal_length_max) / 2, show_value=true))"
 
 # ╔═╡ 9eaad914-82f1-43bf-9194-db8c0f1c70ef
-md"Sepal Width $(@bind sepal_width_slider Slider(sepal_width_min:0.1:sepal_width_max, default=(sepal_width_min + sepal_width_max) / 2, show_value=true))"
+md"Sepal Width $(@bind sepal_width_slider PlutoUI.Slider(sepal_width_min:0.1:sepal_width_max, default=(sepal_width_min + sepal_width_max) / 2, show_value=true))"
 
 # ╔═╡ 16a31c35-62d3-4395-9dc5-853abf9e2160
-md"Sepal Length $(@bind sepal_length_slider Slider(sepal_length_min:0.1:sepal_length_max, default=(sepal_length_min + sepal_length_max) / 2, show_value=true))"
+md"Sepal Length $(@bind sepal_length_slider PlutoUI.Slider(sepal_length_min:0.1:sepal_length_max, default=(sepal_length_min + sepal_length_max) / 2, show_value=true))"
 
 # ╔═╡ f143ef8b-c466-42c3-907e-fce1ba32fa1a
 function draw_oval(ax, x, y, width, height, rotation=0.0; color=:blue, alpha=0.5)
@@ -176,7 +176,7 @@ function draw_oval(ax, x, y, width, height, rotation=0.0; color=:blue, alpha=0.5
 end
 
 # ╔═╡ 190ab0db-ac8b-4ddd-ace3-90e07c2cffaa
-begin
+let
 	fig = Figure()
 	ax = Axis(fig[1,1],
 		title="Visualising petal and sepal length",
@@ -204,8 +204,8 @@ end
 # ╟─b0728c0f-a570-4d52-92c5-cd41f391f9f6
 # ╟─dc820f20-db90-4ae9-94e9-c4067deb45da
 # ╠═5f35bd6b-eb69-4afb-b5b5-34b8a1335738
-# ╟─3e88c67a-848d-40ad-973e-3805b3d90eb8
-# ╟─abc4aa4f-f69e-4e46-9ab1-e01ff8acb4e2
+# ╠═3e88c67a-848d-40ad-973e-3805b3d90eb8
+# ╠═abc4aa4f-f69e-4e46-9ab1-e01ff8acb4e2
 # ╟─8cba5133-5885-43d3-984d-8722d23ee91d
 # ╟─e621a4ae-ea6e-4d08-a357-09b9d35718f1
 # ╟─3e79bb43-f378-462f-8272-fdce8eed6b79

@@ -145,13 +145,17 @@ md"""
 """
 
 # ╔═╡ 6926ee86-e795-457a-86fc-a7241cbe6b51
+let
+	r = 3.09
+	area = π * r ^ 2
+	round(area, digits=2)
+end
+
+# ╔═╡ d533671b-48b5-451a-a9ff-01443a146a8b
 function find_area(r)
 	area = π * r ^ 2
 	round(area, digits=2)
 end	
-
-# ╔═╡ d533671b-48b5-451a-a9ff-01443a146a8b
-find_area(5)
 
 # ╔═╡ b8b9fb7f-4e9f-4f0d-b53b-7f6b35824daf
 md"""

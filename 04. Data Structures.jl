@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -174,8 +174,7 @@ Why doesn't this work?
 """
 
 # ╔═╡ 188b63d5-7e37-450f-883c-a694a9ff7803
-phonebook["Emergency"] = 911
-
+## YOUR CODE GOES HERE
 # ╔═╡ 085e3084-639a-417f-ac9a-b79fe7e310b8
 md"""
 2. Create a new dictionary called `flexible_phonebook` that has:
@@ -299,7 +298,7 @@ Can you find the function to **sort** the random vector below?
 random = rand(1:100, 10)
 
 # ╔═╡ a03727d1-c807-4af5-bead-21d4b51ec62f
-
+## YOUR CODE GOES HERE
 # ╔═╡ 606af175-6429-4d1f-88fe-e7419eea430e
 let
 	sum_text = md"""The list in `random` is **$(issorted(random) ? "" : "not")** sorted:"""
@@ -546,8 +545,7 @@ md"""
 """
 
 # ╔═╡ f5e3f509-28c6-4ce4-893c-98d9d5a29f24
-A1 = map(x -> x + 2, A)
-
+## YOUR CODE GOES HERE
 # ╔═╡ ff1eecad-a82e-434a-a1f5-4d6e2c3bcf2e
 if A1 == [3 4 5; 6 7 8; 9 10 11]
 	md"""
@@ -560,8 +558,7 @@ md"""
 """
 
 # ╔═╡ 0396b6a4-5eb6-4720-98a6-3fad66f64bad
-A2 = (A1 .+ 1) .* 3
-
+## YOUR CODE GOES HERE
 # ╔═╡ 2f6d22e7-ec13-4062-8c65-ba42655df4ae
 if A2 == [12 15 18; 21 24 27; 30 33 36]
 	md"""

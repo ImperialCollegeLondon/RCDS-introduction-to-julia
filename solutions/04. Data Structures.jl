@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -190,7 +190,7 @@ Why doesn't this work?
 """
 
 # ╔═╡ 188b63d5-7e37-450f-883c-a694a9ff7803
-# @keepcode
+# @solution
 phonebook["Emergency"] = 911
 
 # ╔═╡ 085e3084-639a-417f-ac9a-b79fe7e310b8
@@ -336,6 +336,7 @@ Can you find the function to **sort** the random vector below?
 random = rand(1:100, 10)
 
 # ╔═╡ a03727d1-c807-4af5-bead-21d4b51ec62f
+# @solution
 sort!(random)
 
 # ╔═╡ 606af175-6429-4d1f-88fe-e7419eea430e
@@ -618,7 +619,7 @@ md"""
 """
 
 # ╔═╡ f5e3f509-28c6-4ce4-893c-98d9d5a29f24
-# @keepcode
+# @solution
 A1 = map(x -> x + 2, A)
 
 # ╔═╡ ff1eecad-a82e-434a-a1f5-4d6e2c3bcf2e
@@ -634,7 +635,7 @@ md"""
 """
 
 # ╔═╡ 0396b6a4-5eb6-4720-98a6-3fad66f64bad
-# @keepcode
+# @solution
 A2 = (A1 .+ 1) .* 3
 
 # ╔═╡ 2f6d22e7-ec13-4062-8c65-ba42655df4ae

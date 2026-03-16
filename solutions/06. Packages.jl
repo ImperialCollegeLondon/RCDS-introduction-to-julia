@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -8,6 +8,7 @@ using InteractiveUtils
 using Example
 
 # ╔═╡ 90844152-f568-4cbb-bc53-e92c9943bbc6
+# @solution
 using Primes
 
 # ╔═╡ 49468286-27ce-11ef-004f-631745764f27
@@ -75,6 +76,7 @@ md"""
 """
 
 # ╔═╡ c3e828cc-9055-485c-9a4d-0e0d3bb2ea26
+# @solution
 my_primes = primes(1000)
 
 # ╔═╡ eb0700c3-d921-42ce-8ca7-abb8feea61e1

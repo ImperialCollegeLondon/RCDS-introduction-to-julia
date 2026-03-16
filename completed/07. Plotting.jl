@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -77,36 +77,7 @@ md"""
 And there we have it!
 
 This is a joke about how people often conflate correlation and causation.
-
-CairoMakie produces high-quality static plots suitable for publications and presentations.
 """
-
-# ╔═╡ 2edd3cfc-9013-4b19-83f2-9b98cbacedcb
-
-
-# ╔═╡ 627c8d9e-0f07-4c9a-b2bd-5e14426b3fba
-md"""
-CairoMakie can also create animations! Let's see an example.
-"""
-
-# ╔═╡ cc767273-86c3-4ecb-b267-4b92168d7b33
-
-
-# ╔═╡ 030d8ce3-82ba-4367-aac8-55b4454eafa6
-md"""
-Let's plot a sine wave!
-"""
-
-# ╔═╡ 39a6eac1-4ec4-45a7-8b01-662247bfc102
-x = 0:0.01:2π # an array with values 0 to 2π , at a step of 0.1
-
-# ╔═╡ 99ed55df-8d00-4954-890e-4dd04bad3bd4
-let
-	fig = Figure()
-	ax1 = Axis(fig[1,1], title="Sine Wave", limits=(nothing, (-1.5, 1.5)))
-	lines!(ax1, x, sin.(x))
-	fig
-end
 
 # ╔═╡ 4d73f3e6-579c-4555-9207-a8310efeaf54
 md"""

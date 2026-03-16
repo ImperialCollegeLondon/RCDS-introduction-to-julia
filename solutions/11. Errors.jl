@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -146,7 +146,7 @@ Test it with `"123"` and `"hello"`.
 """
 
 # ╔═╡ 1467687b-f0ed-49d8-88f5-78f6f6d2076e
-# @keepcode
+# @solution
 function safe_parse_int(str)
     try
         parse(Int, str)
@@ -156,11 +156,9 @@ function safe_parse_int(str)
 end
 
 # ╔═╡ efbbd0c5-4f3c-4a21-86cb-179da9bb9473
-# @keepcode
 safe_parse_int("123")
 
 # ╔═╡ 4ac8dc23-dde1-43ec-a17b-51179b36161b
-# @keepcode
 safe_parse_int("hello")
 
 # ╔═╡ e0eb96a9-9682-4db7-8c8d-c18d31502066
