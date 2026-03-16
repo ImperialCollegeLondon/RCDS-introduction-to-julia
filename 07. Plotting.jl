@@ -42,7 +42,7 @@ We can use functions like `lines` and `scatter` to generate plots, and combine t
 """
 
 # ╔═╡ 546c1f6f-b95c-4b6c-b18f-9e043fb0b7b8
-
+## YOUR CODE GOES HERE
 # ╔═╡ 9a0ba5d9-2d79-47c1-80c4-a7aab24795a8
 md"""
 The `!` at the end of the `scatter!` function name makes `scatter!` a mutating function, indicating that the scattered points will be added onto the pre-existing axis.
@@ -53,7 +53,7 @@ Next, let's set axis labels and a title by passing keyword arguments to `Axis`.
 """
 
 # ╔═╡ e7c452d8-6169-403e-bf7a-1a5ef880f932
-
+## YOUR CODE GOES HERE
 # ╔═╡ f81f7f23-947c-4d79-9f3a-816e35da4133
 md"""
 !!! warning
@@ -66,19 +66,7 @@ This still doesn't look quite right. The number of pirates has decreased since 1
 """
 
 # ╔═╡ c245eab8-feb9-41b7-857d-3d3d14abe991
-# @exercise
-begin
-	fig3 = Figure()
-	ax3 = Axis(fig3[1,1],
-		xlabel="Number of Pirates [Approximate]",
-		ylabel="Global Temperature (C)",
-		title="Influence of pirate population on global warming",
-		xreversed=true)
-	lines!(ax3, num_pirates, global_temp, label="line")
-	scatter!(ax3, num_pirates, global_temp, label="points")
-	fig3
-end
-
+## YOUR CODE GOES HERE
 # ╔═╡ 298da6be-db34-4517-86f1-694970074a5b
 md"""
 And there we have it!
@@ -106,7 +94,7 @@ Let's plot a sine wave!
 x = 0:0.01:2π # an array with values 0 to 2π , at a step of 0.1
 
 # ╔═╡ 99ed55df-8d00-4954-890e-4dd04bad3bd4
-
+## YOUR CODE GOES HERE
 # ╔═╡ 4d73f3e6-579c-4555-9207-a8310efeaf54
 md"""
 ### Exercises

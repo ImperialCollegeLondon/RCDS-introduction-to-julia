@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.8
+# v0.20.24
 
 using Markdown
 using InteractiveUtils
@@ -8,7 +8,7 @@ using InteractiveUtils
 md"""
 # Hello!
 
-And welcome to Introduction to Julia at the Graduate School. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
+And welcome to Introduction to Julia with RCDS at ECRI. We'll be using [`Pluto`](https://plutojl.org/) to get familiar with the language.
 
 Pluto is a Notebook format. It is similar to Jupyter, but there are a few key differences:
 * Pluto is just for Julia
@@ -75,9 +75,7 @@ md"""
 """
 
 # ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
-#=╠═╡
 typeof(my_pi)
-  ╠═╡ =#
 
 # ╔═╡ a86206f9-4924-4546-8f70-4e70d6b63203
 md"""
@@ -96,9 +94,7 @@ These features also work to make Pluto Notebooks **reactive**.
 """
 
 # ╔═╡ 6fc44c18-1b85-45a0-8ec9-52e1b38d256f
-#=╠═╡
 print(my_pi)
-  ╠═╡ =#
 
 # ╔═╡ ae162d4b-d83f-4dd1-a6fc-742cd8e144be
 md"""
@@ -396,15 +392,26 @@ end
 print("You'll need $(round(dry_ingred))g of dry ingredients and $(wet_ingred)ml of wet ingredients")
 
 # ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
-# ╠═╡ disabled = true
-#=╠═╡
 my_pi = 3.14159
-  ╠═╡ =#
 
 # ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
-#=╠═╡
-my_pi = "3.14"
-  ╠═╡ =#
+my_pi = 3.14
+
+# ╔═╡ 00000000-0000-0000-0000-000000000001
+PLUTO_PROJECT_TOML_CONTENTS = """
+[deps]
+"""
+
+# ╔═╡ 00000000-0000-0000-0000-000000000002
+PLUTO_MANIFEST_TOML_CONTENTS = """
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.12.5"
+manifest_format = "2.0"
+project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
+
+[deps]
+"""
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
@@ -481,3 +488,5 @@ my_pi = "3.14"
 # ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
 # ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
 # ╟─47410678-b3fa-4792-8481-60107d2962b2
+# ╟─00000000-0000-0000-0000-000000000001
+# ╟─00000000-0000-0000-0000-000000000002

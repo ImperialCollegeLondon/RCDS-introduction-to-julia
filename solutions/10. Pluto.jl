@@ -40,7 +40,7 @@ We've got the species we're interested in specified inside an array. But wouldn'
 #species = ["setosa", "versicolor", "virginica"]
 
 # ╔═╡ 2db4998a-ba87-4dc4-923c-3402f8ca3c40
-# @exercise
+# @solution
 @bind species MultiCheckBox(
 	["setosa", "versicolor", "virginica"],
 	default=["setosa", "versicolor", "virginica"]
@@ -85,11 +85,11 @@ We can currently focus in on certain lengths by changing these variables we have
 # end
 
 # ╔═╡ 3e88c67a-848d-40ad-973e-3805b3d90eb8
-# @exercise
+# @solution
 @bind min_length Slider(0.0:0.5:8.0, default=1.0)
 
 # ╔═╡ abc4aa4f-f69e-4e46-9ab1-e01ff8acb4e2
-# @exercise
+# @solution
 @bind max_length Slider(0.0:0.5:8.0, default=7.0)
 
 # ╔═╡ 8cba5133-5885-43d3-984d-8722d23ee91d

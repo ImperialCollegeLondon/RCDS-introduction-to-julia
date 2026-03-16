@@ -46,7 +46,7 @@ We can use functions like `lines` and `scatter` to generate plots, and combine t
 """
 
 # ╔═╡ 546c1f6f-b95c-4b6c-b18f-9e043fb0b7b8
-# @exercise
+# @solution
 begin
 	fig1 = Figure()
 	ax1 = Axis(fig1[1,1])
@@ -65,7 +65,7 @@ Next, let's set axis labels and a title by passing keyword arguments to `Axis`.
 """
 
 # ╔═╡ e7c452d8-6169-403e-bf7a-1a5ef880f932
-# @exercise
+# @solution
 begin
 	fig2 = Figure()
 	ax2 = Axis(fig2[1,1],
@@ -90,7 +90,7 @@ This still doesn't look quite right. The number of pirates has decreased since 1
 
 # ╔═╡ c245eab8-feb9-41b7-857d-3d3d14abe991
 # @keepcode
-# @exercise
+# @solution
 begin
 	fig3 = Figure()
 	ax3 = Axis(fig3[1,1],
@@ -133,7 +133,7 @@ Let's plot a sine wave!
 x = 0:0.01:2π # an array with values 0 to 2π , at a step of 0.1
 
 # ╔═╡ 99ed55df-8d00-4954-890e-4dd04bad3bd4
-# @exercise
+# @solution
 begin
 	fig_sin = Figure()
 	ax_sin = Axis(fig_sin[1,1], title="Sine Wave", limits=(nothing, (-1.5, 1.5)))
@@ -154,7 +154,7 @@ plot y vs. x for $y = x^2$.  If you run into an issue, look at the hint below.
 
 # ╔═╡ a7364ac8-20d5-4ace-8b50-8e4c0881ce2a
 # @solution
-# @exercise
+# @solution
 let
 	x = -10:10
 	y = x .^ 2
@@ -196,7 +196,7 @@ The Makie documentation on layouts is available [here](https://docs.makie.org/st
 
 # ╔═╡ bc776cd3-a9af-423f-8c21-7e1fc1e9a8cd
 # @solution
-# @exercise
+# @solution
 begin
 	fig6 = Figure()
 	ax6a = Axis(fig6[1,1]); lines!(ax6a, z, z)

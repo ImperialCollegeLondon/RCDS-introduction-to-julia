@@ -36,7 +36,7 @@ We've got the species we're interested in specified inside an array. But wouldn'
 #species = ["setosa", "versicolor", "virginica"]
 
 # ╔═╡ 2db4998a-ba87-4dc4-923c-3402f8ca3c40
-
+## YOUR CODE GOES HERE
 # ╔═╡ b0728c0f-a570-4d52-92c5-cd41f391f9f6
 begin
 	filtered_data = filter(row -> row.Species in species, iris)
@@ -74,9 +74,9 @@ We can currently focus in on certain lengths by changing these variables we have
 # end
 
 # ╔═╡ 3e88c67a-848d-40ad-973e-3805b3d90eb8
-
+## YOUR CODE GOES HERE
 # ╔═╡ abc4aa4f-f69e-4e46-9ab1-e01ff8acb4e2
-
+## YOUR CODE GOES HERE
 # ╔═╡ 8cba5133-5885-43d3-984d-8722d23ee91d
 begin
 
