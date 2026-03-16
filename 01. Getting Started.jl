@@ -27,6 +27,7 @@ In Julia, we usually use `println()` to print. And in Pluto, we use `Shift+Enter
 
 
 # ╔═╡ fc8b2f88-77a6-4a84-91a1-3efbd0e92317
+println("hello world!")
 
 # ╔═╡ c964fe22-b644-460c-8960-ec66abeb36ff
 md"""
@@ -35,7 +36,9 @@ You can see the Julia docs *as-you-type* with the `Live Docs` feature of Pluto. 
 
 # ╔═╡ 013179fa-3e31-4527-92d0-5c725e56b619
 
+
 # ╔═╡ 78ea3d9b-9273-4aa4-b5b7-5eb8154ea5ab
+
 
 # ╔═╡ e452dcb5-b3da-4388-8f7f-1dd02ec48e8c
 md"""
@@ -45,16 +48,25 @@ To assign variables, we need name, value and equals sign. Julia is a dynamic lan
 """
 
 # ╔═╡ 03b72a74-3428-40b7-94ac-fefe8d613aae
+my_answer = 42
 
 # ╔═╡ 71473247-35ee-4bed-95a6-e34162c9fcf2
-
-# ╔═╡ 37f732d0-d24f-4e91-8c73-4b7ecfe0c6fe
+typeof(my_answer)
 
 # ╔═╡ cb15ebd0-5580-4b98-b116-df3d58833eca
-
-# ╔═╡ 791aa777-d195-434f-ab57-599f4d771d4f
+pi
 
 # ╔═╡ 5f3bf493-96e4-47c4-a788-8d932f286886
+π
+
+# ╔═╡ 866d6f95-9e21-4b05-88af-8f15a5e5d77e
+🐶 = 5
+
+# ╔═╡ 59de601f-24ab-4e76-a458-a40212cb3bac
+🐶
+
+# ╔═╡ 37f732d0-d24f-4e91-8c73-4b7ecfe0c6fe
+typeof(my_pi)
 
 # ╔═╡ 0ce1ec85-18ff-44bb-a073-1ee07744f9eb
 # \:smi    ---> <tab> ---> select from drop-down ---> <enter>
@@ -65,7 +77,8 @@ md"""
 *Normally* in Julia, *outside* of a Pluto Notebook, we can re-assign new values to existing variables. Variables can even change type.
 """
 
-# ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
+# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
+println(my_pi)
 
 # ╔═╡ a86206f9-4924-4546-8f70-4e70d6b63203
 md"""
@@ -122,6 +135,13 @@ I'll hide the raw Markdown in these Notebooks, but if you'd like to see it, clic
 	Be aware that a Markdown block counts as the one expression you're allowed in a cell.
 """
 
+# ╔═╡ 6e3d9d05-9fcc-459e-a6cd-920fb576f166
+md"""
+Hello! This is now a markdown cell! 
+
+# HELLO
+"""
+
 # ╔═╡ 3d345507-5512-4a56-89ce-6bbd424744ed
 md"""
 # Basic Math
@@ -130,13 +150,13 @@ Here are the infix operators for basic arithmetic.
 """
 
 # ╔═╡ 62331f66-fca5-49de-8d17-88b2180fb639
-addition = 2 + 7
+addition = 200 + 500
 
 # ╔═╡ baa6e805-727d-4846-aaae-59b21ce9637e
-subtraction = 10 - 4
+subtraction = 200 - 120
 
 # ╔═╡ 45dfff43-8eb6-483a-8af4-5e4429c78875
-multiplication = 8 * 7
+multiplication = 10 * 10
 
 # ╔═╡ c9564bee-6a08-4278-9317-1eb2787a7545
 division = 100 / 10
@@ -145,10 +165,16 @@ division = 100 / 10
 exponentiation = 10 ^ 2
 
 # ╔═╡ c1781e49-49fb-4c18-867d-4e927f560563
-modulus = 101 % 2 # can also use mod()
+modulus = 100 % 2 # can also use mod()
 
 # ╔═╡ c9e299e5-9a35-4f41-957c-1c4e5e716ad9
-integer_div = 10 ÷ 3 # can also use div()
+integer_div = 10 ÷ 1 # can also use div()
+
+# ╔═╡ ae504c04-fc58-49d2-97c7-ee55556bed30
+div(10, 3)
+
+# ╔═╡ 93ad6c03-22b0-4b9b-bb84-d6cca39816fa
+10 ÷ 3
 
 # ╔═╡ daa92e6c-14a9-4f6d-b27c-a0c3acc71b8b
 let
@@ -190,12 +216,16 @@ There are two common ways to represent text in Julia. Strings and characters.
 """
 
 # ╔═╡ 5b1d25f3-c3c4-4f6f-8f95-1346502dc5f0
+println("""This gives us an "error" because of ambiguity""")
 
 # ╔═╡ 028698d3-3402-43b9-9aae-9f5f19dba623
 
+
 # ╔═╡ f869855c-680d-4573-9a0e-4f11a9cf0d9a
 
+
 # ╔═╡ 6300060a-78ed-45ba-ad20-4a09fba03ba7
+
 
 # ╔═╡ 6a024b42-2dd2-4adb-94bb-d8d526c137eb
 print("""Triple-quoted string literals
@@ -209,8 +239,13 @@ You might be wondering why we didn't just use single-quotes to take away the amb
 """
 
 # ╔═╡ 073cc50d-eb4f-4fd8-b01f-eaeeaf4ab13b
+c1 = 'c'
 
 # ╔═╡ 1ff61dc1-c091-488e-905a-ac2e09be5803
+typeof(c1)
+
+# ╔═╡ d07d44f0-450d-426d-9b25-d0aa1f514170
+c2 = 'abc'
 
 # ╔═╡ 4422a84a-c814-46b6-8fbb-b0ea3aaccbc3
 md"""
@@ -225,9 +260,17 @@ Then use the type constructor itself (e.g. `Int64`) to convert `days` to the sma
 days = 252
 
 # ╔═╡ d1ddc739-7f88-4295-bc56-d40174eb650e
-## YOUR CODE GOES HERE
-# ╔═╡ 0072b42a-a17c-4035-a284-684b48d51483
-## YOUR CODE GOES HERE
+days_float = convert(Float64, days)
+
+# ╔═╡ 2970939e-dfd6-4f43-a5c8-a8eccc12b0e0
+Int16(days)
+
+# ╔═╡ 29cd019a-fecc-4694-9c7c-0f6274309d2c
+days_new::Int16 = 252
+
+# ╔═╡ 075edd07-3216-4090-aea7-08bbb66ac86e
+typeof(days_new)
+
 # ╔═╡ 0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 md"""
 Try to convert the string of numbers below to an integer using `convert()`. 
@@ -240,8 +283,10 @@ Try to convert the string of numbers below to an integer using `convert()`.
 nums = "1234"
 
 # ╔═╡ 8ef119c8-a812-45b1-b552-9a0509f2b15e
-## YOUR CODE GOES HERE
+parse(Int64, nums)
+
 # ╔═╡ 12382d06-cd50-4908-82f2-5ea915fcb2fd
+
 
 # ╔═╡ 5bea5fea-c12f-45ea-9b13-02d8f9ce8810
 md"""
@@ -260,6 +305,9 @@ num_fingers = 10
 num_toes = 10
 
 # ╔═╡ b8a37d04-62c8-4144-a389-29e0458e7c1b
+println("""Hi, I'm $(name)!
+		I have $(num_fingers) fingers and $(num_toes) toes.
+		That's $(num_fingers + num_toes) digits in total""")
 
 # ╔═╡ 9b500b3c-9a7b-48e0-af69-65807fe9e77c
 md"""
@@ -275,13 +323,19 @@ So called `begin` blocks can include any number of subexpressions, and are allow
 """
 
 # ╔═╡ 5b624e7d-e420-4aad-bf7e-0817b73c0e01
+begin
+	empty_seats = 10
+	filled_seats = 8
+	total_seats = empty_seats + filled_seats
+end
 
 # ╔═╡ d96242c0-f9af-4c80-b6d4-395915d7c4e4
 md"""
 `begin` blocks have a short hand form known as `(;)`, for short compound expressions. It looks like so:
 """
 
-# ╔═╡ c4517e92-b388-4f85-800a-e06bd1aae363
+# ╔═╡ 1f62470b-b386-43df-b550-7f14b5a2314c
+(empty=10; filled=8; total=empty+filled)
 
 # ╔═╡ 0b19ea0a-09c2-4d7d-b207-7b8d1504896e
 md"""
@@ -342,14 +396,38 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 """
 
 # ╔═╡ 2d52e827-6587-4d56-8ba0-289bcf3fb335
-## YOUR CODE GOES HERE
+## YOUR CODE GOES HER
+
 # ╔═╡ da8fe9be-cdb2-4838-99a4-629a9588d088
-## YOUR CODE GOES HERE
+## YOUR CODE GOES HER
+
 # ╔═╡ 47410678-b3fa-4792-8481-60107d2962b2
 
-# ╔═╡ 410611f5-8d46-4272-9a5b-4daf3705afeb
 
-# ╔═╡ 3cefca52-2075-48b7-9835-4fc9f79e332d
+# ╔═╡ 8165649a-746b-48d3-a86e-8b100c4b2c08
+# ╠═╡ disabled = true
+#=╠═╡
+my_pi = 3.14
+  ╠═╡ =#
+
+# ╔═╡ 52e90ebc-46ad-4b1b-a22e-0ce915ad9538
+my_pi = 3.14159
+
+# ╔═╡ 00000000-0000-0000-0000-000000000001
+PLUTO_PROJECT_TOML_CONTENTS = """
+[deps]
+"""
+
+# ╔═╡ 00000000-0000-0000-0000-000000000002
+PLUTO_MANIFEST_TOML_CONTENTS = """
+# This file is machine-generated - editing it directly is not advised
+
+julia_version = "1.12.5"
+manifest_format = "2.0"
+project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
+
+[deps]
+"""
 
 # ╔═╡ Cell order:
 # ╟─e22c1412-cf4c-11ee-1b2b-f98109dfd08f
@@ -361,12 +439,13 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╟─e452dcb5-b3da-4388-8f7f-1dd02ec48e8c
 # ╠═03b72a74-3428-40b7-94ac-fefe8d613aae
 # ╠═71473247-35ee-4bed-95a6-e34162c9fcf2
-# ╠═410611f5-8d46-4272-9a5b-4daf3705afeb
 # ╠═8165649a-746b-48d3-a86e-8b100c4b2c08
 # ╠═37f732d0-d24f-4e91-8c73-4b7ecfe0c6fe
 # ╠═cb15ebd0-5580-4b98-b116-df3d58833eca
-# ╠═791aa777-d195-434f-ab57-599f4d771d4f
 # ╠═5f3bf493-96e4-47c4-a788-8d932f286886
+# ╠═866d6f95-9e21-4b05-88af-8f15a5e5d77e
+# ╠═59de601f-24ab-4e76-a458-a40212cb3bac
+# ╠═52e90ebc-46ad-4b1b-a22e-0ce915ad9538
 # ╠═0ce1ec85-18ff-44bb-a073-1ee07744f9eb
 # ╟─076f5d7a-9c0e-4ff3-a0af-24b49477f364
 # ╠═3cefca52-2075-48b7-9835-4fc9f79e332d
@@ -376,6 +455,7 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╠═b0c59c61-2f7d-47bd-9082-bcdd44fe6140
 # ╠═da18109b-dc2b-4c13-9c4b-65909928f4e1
 # ╟─cf422c68-f253-46ba-ba11-08b204e4038d
+# ╟─6e3d9d05-9fcc-459e-a6cd-920fb576f166
 # ╟─3d345507-5512-4a56-89ce-6bbd424744ed
 # ╠═62331f66-fca5-49de-8d17-88b2180fb639
 # ╠═baa6e805-727d-4846-aaae-59b21ce9637e
@@ -384,6 +464,8 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╠═6c4b845a-b4a0-4904-abbf-8f2bd44a5638
 # ╠═c1781e49-49fb-4c18-867d-4e927f560563
 # ╠═c9e299e5-9a35-4f41-957c-1c4e5e716ad9
+# ╠═ae504c04-fc58-49d2-97c7-ee55556bed30
+# ╠═93ad6c03-22b0-4b9b-bb84-d6cca39816fa
 # ╟─daa92e6c-14a9-4f6d-b27c-a0c3acc71b8b
 # ╟─023c2eb9-3125-4349-bb34-8b02d12c4894
 # ╠═ad2929a3-752c-4139-b13b-db97da7aee25
@@ -397,10 +479,13 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╟─78605c79-0ed0-4b4d-9f6a-ef73d9334546
 # ╠═073cc50d-eb4f-4fd8-b01f-eaeeaf4ab13b
 # ╠═1ff61dc1-c091-488e-905a-ac2e09be5803
+# ╠═d07d44f0-450d-426d-9b25-d0aa1f514170
 # ╟─4422a84a-c814-46b6-8fbb-b0ea3aaccbc3
 # ╠═e9810f53-c58b-421a-962a-c5e6275da04e
 # ╠═d1ddc739-7f88-4295-bc56-d40174eb650e
-# ╠═0072b42a-a17c-4035-a284-684b48d51483
+# ╠═2970939e-dfd6-4f43-a5c8-a8eccc12b0e0
+# ╠═29cd019a-fecc-4694-9c7c-0f6274309d2c
+# ╠═075edd07-3216-4090-aea7-08bbb66ac86e
 # ╟─0e03b7cc-4a34-44d6-b567-bffd6dd3b879
 # ╠═2b0ed67b-27f3-4ce1-9da8-9f490098262d
 # ╠═8ef119c8-a812-45b1-b552-9a0509f2b15e
@@ -413,7 +498,7 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╟─9b500b3c-9a7b-48e0-af69-65807fe9e77c
 # ╠═5b624e7d-e420-4aad-bf7e-0817b73c0e01
 # ╟─d96242c0-f9af-4c80-b6d4-395915d7c4e4
-# ╠═c4517e92-b388-4f85-800a-e06bd1aae363
+# ╠═1f62470b-b386-43df-b550-7f14b5a2314c
 # ╟─0b19ea0a-09c2-4d7d-b207-7b8d1504896e
 # ╠═7bfeee9c-7f4c-4e11-8d20-bd48e86e955e
 # ╟─ef5dd965-e329-4fc6-b09a-a2dee7456954
@@ -426,3 +511,5 @@ Scale the recipe for four people and calculate the total amount of dry and wet i
 # ╠═2d52e827-6587-4d56-8ba0-289bcf3fb335
 # ╠═da8fe9be-cdb2-4838-99a4-629a9588d088
 # ╟─47410678-b3fa-4792-8481-60107d2962b2
+# ╟─00000000-0000-0000-0000-000000000001
+# ╟─00000000-0000-0000-0000-000000000002
