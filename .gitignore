@@ -1,2 +1,3 @@
 .venv
 .ipynb_checkpoints
+*backup [0-9]*.jl
