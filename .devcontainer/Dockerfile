@@ -14,7 +14,6 @@ WORKDIR /tmp/julia-project
 COPY Project.toml Manifest.toml ./
 
 RUN mkdir -p "${JULIA_DEPOT_PATH}" \
-    && julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile()' \
-    && julia -e 'using Pkg; Pkg.add("LanguageServer"); Pkg.precompile()' \
+    && julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.precompile(); using Pluto' \
     && chmod -R a+rwX "${JULIA_DEPOT_PATH}" \
     && rm -rf /tmp/julia-project
