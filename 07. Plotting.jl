@@ -88,7 +88,7 @@ Let's plot a sine wave!
 x = 0:0.01:2π # an array with values 0 to 2π , at a step of 0.1
 
 # ╔═╡ 99ed55df-8d00-4954-890e-4dd04bad3bd4
-## YOUR CODE GOES HERE
+
 # ╔═╡ 4d73f3e6-579c-4555-9207-a8310efeaf54
 md"""
 ### Exercises

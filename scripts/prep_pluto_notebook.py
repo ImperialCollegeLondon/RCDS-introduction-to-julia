@@ -65,6 +65,9 @@ def render_cell(cell: list[str], variant: str) -> str:
     if header.startswith(CELL_MARKER + "Cell order:"):
         return "".join(cell)
 
+    if "".join(body_lines).lstrip().startswith("PLUTO_"):
+        return "".join(cell)
+
     if is_markdown_cell(body_lines):
         return "".join(cell)
 
